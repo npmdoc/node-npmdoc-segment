@@ -1,0 +1,3006 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/leizongmin/node-segment#readme"
+
+    >segment (v0.1.3)</a>
+</h1>
+<h4>Chinese word segmentation 中文分词模块</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.segment">module segment</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.segment">
+            function <span class="apidocSignatureSpan"></span>segment
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Optimizer">
+            function <span class="apidocSignatureSpan">segment.</span>Optimizer
+            <span class="apidocSignatureSpan">(segment)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.POSTAG.chsName">
+            function <span class="apidocSignatureSpan">segment.</span>POSTAG.chsName
+            <span class="apidocSignatureSpan">(p)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment">
+            function <span class="apidocSignatureSpan">segment.</span>Segment
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype._resolveDictFilename">
+            function <span class="apidocSignatureSpan">segment.</span>Segment.prototype._resolveDictFilename
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.doSegment">
+            function <span class="apidocSignatureSpan">segment.</span>Segment.prototype.doSegment
+            <span class="apidocSignatureSpan">(text, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.getDict">
+            function <span class="apidocSignatureSpan">segment.</span>Segment.prototype.getDict
+            <span class="apidocSignatureSpan">(type)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.indexOf">
+            function <span class="apidocSignatureSpan">segment.</span>Segment.prototype.indexOf
+            <span class="apidocSignatureSpan">(words, s, cur)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.loadDict">
+            function <span class="apidocSignatureSpan">segment.</span>Segment.prototype.loadDict
+            <span class="apidocSignatureSpan">(name, type, convert_to_lower)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.loadStopwordDict">
+            function <span class="apidocSignatureSpan">segment.</span>Segment.prototype.loadStopwordDict
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.loadSynonymDict">
+            function <span class="apidocSignatureSpan">segment.</span>Segment.prototype.loadSynonymDict
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.split">
+            function <span class="apidocSignatureSpan">segment.</span>Segment.prototype.split
+            <span class="apidocSignatureSpan">(words, s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.toString">
+            function <span class="apidocSignatureSpan">segment.</span>Segment.prototype.toString
+            <span class="apidocSignatureSpan">(words)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.use">
+            function <span class="apidocSignatureSpan">segment.</span>Segment.prototype.use
+            <span class="apidocSignatureSpan">(module)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.useDefault">
+            function <span class="apidocSignatureSpan">segment.</span>Segment.prototype.useDefault
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Tokenizer">
+            function <span class="apidocSignatureSpan">segment.</span>Tokenizer
+            <span class="apidocSignatureSpan">(segment)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.toString">
+            function <span class="apidocSignatureSpan">segment.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">segment.</span>Optimizer.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">segment.</span>POSTAG</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">segment.</span>Segment.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">segment.</span>Tokenizer.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">segment.</span>version</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.segment.Optimizer">module segment.Optimizer</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Optimizer.Optimizer">
+            function <span class="apidocSignatureSpan">segment.</span>Optimizer
+            <span class="apidocSignatureSpan">(segment)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.segment.Optimizer.prototype">module segment.Optimizer.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Optimizer.prototype.doOptimize">
+            function <span class="apidocSignatureSpan">segment.Optimizer.prototype.</span>doOptimize
+            <span class="apidocSignatureSpan">(words, modules)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.segment.POSTAG">module segment.POSTAG</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.POSTAG.chsName">
+            function <span class="apidocSignatureSpan">segment.POSTAG.</span>chsName
+            <span class="apidocSignatureSpan">(p)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>A_M</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>A_NR</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>A_NS</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>A_NT</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>A_NX</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>A_NZ</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>A_Q</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>D_A</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>D_B</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>D_C</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>D_D</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>D_E</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>D_F</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>D_I</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>D_K</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>D_L</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>D_MQ</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>D_N</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>D_O</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>D_P</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>D_R</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>D_S</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>D_T</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>D_U</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>D_V</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>D_W</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>D_X</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>D_Y</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>D_Z</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>D_ZH</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>UNK</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>URL</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>a_m</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>a_nr</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>a_ns</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>a_nt</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>a_nx</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>a_nz</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>a_q</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>d_a</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>d_b</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>d_c</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>d_d</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>d_e</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>d_f</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>d_i</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>d_k</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>d_l</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>d_mq</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>d_n</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>d_o</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>d_p</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>d_r</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>d_s</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>d_t</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>d_u</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>d_v</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>d_w</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>d_x</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>d_y</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>d_z</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>d_zh</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>unk</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>url</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">segment.POSTAG.</span>CHSNAME</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.segment.POSTAG.chsName">module segment.POSTAG.chsName</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.POSTAG.chsName.chsName">
+            function <span class="apidocSignatureSpan">segment.POSTAG.</span>chsName
+            <span class="apidocSignatureSpan">(p)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.segment.Segment">module segment.Segment</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.Segment">
+            function <span class="apidocSignatureSpan">segment.</span>Segment
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">segment.Segment.</span>POSTAG</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">segment.Segment.</span>version</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.segment.Segment.prototype">module segment.Segment.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype._resolveDictFilename">
+            function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>_resolveDictFilename
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.doSegment">
+            function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>doSegment
+            <span class="apidocSignatureSpan">(text, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.getDict">
+            function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>getDict
+            <span class="apidocSignatureSpan">(type)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.indexOf">
+            function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>indexOf
+            <span class="apidocSignatureSpan">(words, s, cur)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.loadDict">
+            function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>loadDict
+            <span class="apidocSignatureSpan">(name, type, convert_to_lower)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.loadStopwordDict">
+            function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>loadStopwordDict
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.loadSynonymDict">
+            function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>loadSynonymDict
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.split">
+            function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>split
+            <span class="apidocSignatureSpan">(words, s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.toString">
+            function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>toString
+            <span class="apidocSignatureSpan">(words)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.use">
+            function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>use
+            <span class="apidocSignatureSpan">(module)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.useDefault">
+            function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>useDefault
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.segment.Segment.prototype._resolveDictFilename">module segment.Segment.prototype._resolveDictFilename</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype._resolveDictFilename._resolveDictFilename">
+            function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>_resolveDictFilename
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.segment.Segment.prototype.doSegment">module segment.Segment.prototype.doSegment</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.doSegment.doSegment">
+            function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>doSegment
+            <span class="apidocSignatureSpan">(text, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.segment.Segment.prototype.getDict">module segment.Segment.prototype.getDict</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.getDict.getDict">
+            function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>getDict
+            <span class="apidocSignatureSpan">(type)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.segment.Segment.prototype.indexOf">module segment.Segment.prototype.indexOf</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.indexOf.indexOf">
+            function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>indexOf
+            <span class="apidocSignatureSpan">(words, s, cur)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.segment.Segment.prototype.loadDict">module segment.Segment.prototype.loadDict</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.loadDict.loadDict">
+            function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>loadDict
+            <span class="apidocSignatureSpan">(name, type, convert_to_lower)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.segment.Segment.prototype.loadStopwordDict">module segment.Segment.prototype.loadStopwordDict</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.loadStopwordDict.loadStopwordDict">
+            function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>loadStopwordDict
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.segment.Segment.prototype.loadSynonymDict">module segment.Segment.prototype.loadSynonymDict</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.loadSynonymDict.loadSynonymDict">
+            function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>loadSynonymDict
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.segment.Segment.prototype.split">module segment.Segment.prototype.split</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.split.split">
+            function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>split
+            <span class="apidocSignatureSpan">(words, s)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.segment.Segment.prototype.toString">module segment.Segment.prototype.toString</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.toString.toString">
+            function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.segment.Segment.prototype.use">module segment.Segment.prototype.use</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.use.use">
+            function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>use
+            <span class="apidocSignatureSpan">(module)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.segment.Segment.prototype.useDefault">module segment.Segment.prototype.useDefault</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.useDefault.useDefault">
+            function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>useDefault
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.segment.Tokenizer">module segment.Tokenizer</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Tokenizer.Tokenizer">
+            function <span class="apidocSignatureSpan">segment.</span>Tokenizer
+            <span class="apidocSignatureSpan">(segment)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.segment.Tokenizer.prototype">module segment.Tokenizer.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Tokenizer.prototype.split">
+            function <span class="apidocSignatureSpan">segment.Tokenizer.prototype.</span>split
+            <span class="apidocSignatureSpan">(text, modules)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.segment.toString">module segment.toString</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.toString.toString">
+            function <span class="apidocSignatureSpan">segment.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.segment" id="apidoc.module.segment">module segment</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.segment.segment" id="apidoc.element.segment.segment">
+        function <span class="apidocSignatureSpan"></span>segment
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">segment = function () {
+  this.POSTAG = POSTAG; // 词性
+  this.DICT = {};       // 词典表
+  this.modules = {
+    tokenizer:  [],     // 分词模块
+    optimizer:  []      // 优化模块
+  };
+  this.tokenizer = new Tokenizer(this);
+  this.optimizer = new Optimizer(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Optimizer" id="apidoc.element.segment.Optimizer">
+        function <span class="apidocSignatureSpan">segment.</span>Optimizer
+        <span class="apidocSignatureSpan">(segment)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Optimizer = function (segment) {
+  this.segment = segment;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.segment.POSTAG.chsName" id="apidoc.element.segment.POSTAG.chsName">
+        function <span class="apidocSignatureSpan">segment.</span>POSTAG.chsName
+        <span class="apidocSignatureSpan">(p)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">POSTAG.chsName = function (p) {
+  if (isNaN(p)) {
+    return CHSNAME[p] || CHSNAME.UNK;
+  } else {
+    var ret = [];
+    for (var i in _POSTAG) {
+      if ((p &#x26; _POSTAG[i]) &#x3e; 0) {
+        ret.push(CHSNAME[i]);
+      }
+    }
+    if (ret.length &#x3c; 1) {
+      return CHSNAME.UNK;
+    } else {
+      return ret.toString();
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment" id="apidoc.element.segment.Segment">
+        function <span class="apidocSignatureSpan">segment.</span>Segment
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Segment = function () {
+  this.POSTAG = POSTAG; // 词性
+  this.DICT = {};       // 词典表
+  this.modules = {
+    tokenizer:  [],     // 分词模块
+    optimizer:  []      // 优化模块
+  };
+  this.tokenizer = new Tokenizer(this);
+  this.optimizer = new Optimizer(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype._resolveDictFilename" id="apidoc.element.segment.Segment.prototype._resolveDictFilename">
+        function <span class="apidocSignatureSpan">segment.</span>Segment.prototype._resolveDictFilename
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Segment.prototype._resolveDictFilename = function (name) {
+  var filename = path.resolve(name);
+  if (!fs.existsSync(filename)) {
+    var filename = path.resolve(__dirname, &#x27;../dicts&#x27;, name);
+    if (!fs.existsSync(filename)) {
+      throw Error(&#x27;Cannot find dict file &#x22;&#x27; + filename + &#x27;&#x22;.&#x27;);
+    }
+  }
+  return filename;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.doSegment" id="apidoc.element.segment.Segment.prototype.doSegment">
+        function <span class="apidocSignatureSpan">segment.</span>Segment.prototype.doSegment
+        <span class="apidocSignatureSpan">(text, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Segment.prototype.doSegment = function (text, options) {
+  var me = this;
+  options = options || {};
+  var ret = [];
+
+  // 将文本按照换行符分割成多段，并逐一分词
+  text.replace(/\r/g, &#x27;\n&#x27;).split(/(\n|\s)+/).forEach(function (section) {
+    var section = section.trim();
+    if (section.length &#x3c; 1) return;
+    // ======================================
+    // 分词
+    var sret = me.tokenizer.split(section, me.modules.tokenizer);
+
+    // 优化
+    sret = me.optimizer.doOptimize(sret, me.modules.optimizer);
+
+    // ======================================
+    // 连接分词结果
+    if (sret.length &#x3e; 0) ret = ret.concat(sret);
+  });
+
+  // 去除标点符号
+  if (options.stripPunctuation) {
+    ret = ret.filter(function (item) {
+      return item.p !== POSTAG.D_W;
+    });
+  }
+
+  // 转换同义词
+  function convertSynonym (list) {
+    var count = 0;
+    var TABLE = me.getDict(&#x27;SYNONYM&#x27;);
+    list = list.map(function (item) {
+      if (item.w in TABLE) {
+        count++;
+        return {w: TABLE[item.w], p: item.p};
+      } else {
+        return item;
+      }
+    });
+    return {count: count, list: list};
+  }
+  if (options.convertSynonym) {
+    do {
+      var result = convertSynonym(ret);
+      ret = result.list;
+    } while (result.count &#x3e; 0);
+  }
+
+  // 去除停止符
+  if (options.stripStopword) {
+    var STOPWORD = me.getDict(&#x27;STOPWORD&#x27;);
+    ret = ret.filter(function (item) {
+      return !(item.w in STOPWORD);
+    });
+  }
+
+  // 仅返回单词内容
+  if (options.simple) {
+    ret = ret.map(function (item) {
+      return item.w;
+    });
+  }
+
+  return ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.getDict" id="apidoc.element.segment.Segment.prototype.getDict">
+        function <span class="apidocSignatureSpan">segment.</span>Segment.prototype.getDict
+        <span class="apidocSignatureSpan">(type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Segment.prototype.getDict = function (type) {
+  return this.DICT[type];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.indexOf" id="apidoc.element.segment.Segment.prototype.indexOf">
+        function <span class="apidocSignatureSpan">segment.</span>Segment.prototype.indexOf
+        <span class="apidocSignatureSpan">(words, s, cur)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Segment.prototype.indexOf = function (words, s, cur) {
+  cur = isNaN(cur) ? 0 : cur;
+  var f = typeof s === &#x27;string&#x27; ? &#x27;w&#x27; : &#x27;p&#x27;;
+
+  while (cur &#x3c; words.length) {
+    if (words[cur][f] == s) return cur;
+    cur++;
+  }
+
+  return -1;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.loadDict" id="apidoc.element.segment.Segment.prototype.loadDict">
+        function <span class="apidocSignatureSpan">segment.</span>Segment.prototype.loadDict
+        <span class="apidocSignatureSpan">(name, type, convert_to_lower)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Segment.prototype.loadDict = function (name, type, convert_to_lower) {
+  var filename = this._resolveDictFilename(name);
+  if (!type)  type = &#x27;TABLE&#x27;;     // 默认为TABLE
+
+  // 初始化词典
+  if (!this.DICT[type]) this.DICT[type] = {};
+  if (!this.DICT[type + &#x27;2&#x27;]) this.DICT[type + &#x27;2&#x27;] = {};
+  var TABLE = this.DICT[type];        // 词典表  &#x27;词&#x27; =&#x3e; {属性}
+  var TABLE2 = this.DICT[type + &#x27;2&#x27;]; // 词典表  &#x27;长度&#x27; =&#x3e; &#x27;词&#x27; =&#x3e; 属性
+  // 导入数据
+  var POSTAG = this.POSTAG;
+  var data = fs.readFileSync(filename, &#x27;utf8&#x27;);
+  if (convert_to_lower) data = data.toLowerCase();
+
+  data.split(/\r?\n/).forEach(function (line) {
+    var blocks = line.split(&#x27;|&#x27;);
+    if (blocks.length &#x3e; 2) {
+      var w = blocks[0].trim();
+      var p = Number(blocks[1]);
+      var f = Number(blocks[2]);
+
+      // 一定要检查单词是否为空，如果为空会导致Bug
+      if (w.length &#x3e; 0) {
+        TABLE[w] = {f: f, p: p};
+        if (!TABLE2[w.length]) TABLE2[w.length] = {};
+        TABLE2[w.length][w] = TABLE[w];
+      }
+    }
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.loadStopwordDict" id="apidoc.element.segment.Segment.prototype.loadStopwordDict">
+        function <span class="apidocSignatureSpan">segment.</span>Segment.prototype.loadStopwordDict
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Segment.prototype.loadStopwordDict = function (name) {
+  var filename = this._resolveDictFilename(name);
+  var type = &#x27;STOPWORD&#x27;;
+
+  // 初始化词典
+  if (!this.DICT[type]) this.DICT[type] = {};
+  var TABLE = this.DICT[type];        // 词典表  &#x27;同义词&#x27; =&#x3e; &#x27;标准词&#x27;
+  // 导入数据
+  var data = fs.readFileSync(filename, &#x27;utf8&#x27;);
+
+  data.split(/\r?\n/).forEach(function (line) {
+    line = line.trim();
+    if (line) {
+      TABLE[line] = true;
+    }
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.loadSynonymDict" id="apidoc.element.segment.Segment.prototype.loadSynonymDict">
+        function <span class="apidocSignatureSpan">segment.</span>Segment.prototype.loadSynonymDict
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Segment.prototype.loadSynonymDict = function (name) {
+  var filename = this._resolveDictFilename(name);
+  var type = &#x27;SYNONYM&#x27;;
+
+  // 初始化词典
+  if (!this.DICT[type]) this.DICT[type] = {};
+  var TABLE = this.DICT[type];        // 词典表  &#x27;同义词&#x27; =&#x3e; &#x27;标准词&#x27;
+  // 导入数据
+  var data = fs.readFileSync(filename, &#x27;utf8&#x27;);
+
+  data.split(/\r?\n/).forEach(function (line) {
+    var blocks = line.split(&#x27;,&#x27;);
+    if (blocks.length &#x3e; 1) {
+      var n1 = blocks[0].trim();
+      var n2 = blocks[1].trim();
+      TABLE[n1] = n2;
+      if (TABLE[n2] === n1) {
+        delete TABLE[n2];
+      }
+    }
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.split" id="apidoc.element.segment.Segment.prototype.split">
+        function <span class="apidocSignatureSpan">segment.</span>Segment.prototype.split
+        <span class="apidocSignatureSpan">(words, s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Segment.prototype.split = function (words, s) {
+  var ret = [];
+  var lasti = 0;
+  var i = 0;
+  var f = typeof s === &#x27;string&#x27; ? &#x27;w&#x27; : &#x27;p&#x27;;
+
+  while (i &#x3c; words.length) {
+    if (words[i][f] == s) {
+      if (lasti &#x3c; i) ret.push(words.slice(lasti, i));
+      ret.push(words.slice(i, i + 1));
+      i++;
+      lasti = i;
+    } else {
+      i++;
+    }
+  }
+  if (lasti &#x3c; words.length - 1) {
+    ret.push(words.slice(lasti, words.length));
+  }
+
+  return ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.toString" id="apidoc.element.segment.Segment.prototype.toString">
+        function <span class="apidocSignatureSpan">segment.</span>Segment.prototype.toString
+        <span class="apidocSignatureSpan">(words)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Segment.prototype.toString = function (words) {
+  return words.map(function (item) {
+    return item.w;
+  }).join(&#x27;&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.use" id="apidoc.element.segment.Segment.prototype.use">
+        function <span class="apidocSignatureSpan">segment.</span>Segment.prototype.use
+        <span class="apidocSignatureSpan">(module)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Segment.prototype.use = function (module) {
+  var me = this;
+
+  if (Array.isArray(module)) {
+    module.forEach(function (module) {
+      me.use(module[i]);
+    });
+
+  } else {
+    if (typeof module == &#x27;string&#x27;) {
+      var filename = path.resolve(__dirname, &#x27;module&#x27;, module + &#x27;.js&#x27;);
+      if (!fs.existsSync(filename)) {
+        throw Error(&#x27;Cannot find module &#x22;&#x27; + module + &#x27;&#x22;.&#x27;);
+      } else {
+        module = require(filename);
+      }
+    }
+    // 初始化并注册模块
+    module.init(this);
+    this.modules[module.type].push(module);
+  }
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.useDefault" id="apidoc.element.segment.Segment.prototype.useDefault">
+        function <span class="apidocSignatureSpan">segment.</span>Segment.prototype.useDefault
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Segment.prototype.useDefault = function () {
+  this
+    // 识别模块
+    // 强制分割类单词识别
+    .use(&#x27;URLTokenizer&#x27;)            // URL识别
+    .use(&#x27;WildcardTokenizer&#x27;)       // 通配符，必须在标点符号识别之前
+    .use(&#x27;PunctuationTokenizer&#x27;)    // 标点符号识别
+    .use(&#x27;ForeignTokenizer&#x27;)        // 外文字符、数字识别，必须在标点符号识别之后
+    // 中文单词识别
+    .use(&#x27;DictTokenizer&#x27;)           // 词典识别
+    .use(&#x27;ChsNameTokenizer&#x27;)        // 人名识别，建议在词典识别之后
+
+    // 优化模块
+    .use(&#x27;EmailOptimizer&#x27;)          // 邮箱地址识别
+    .use(&#x27;ChsNameOptimizer&#x27;)        // 人名识别优化
+    .use(&#x27;DictOptimizer&#x27;)           // 词典识别优化
+    .use(&#x27;DatetimeOptimizer&#x27;)       // 日期时间识别优化
+
+    // 字典文件
+    .loadDict(&#x27;dict.txt&#x27;)           // 盘古词典
+    .loadDict(&#x27;dict2.txt&#x27;)          // 扩展词典（用于调整原盘古词典）
+    .loadDict(&#x27;dict3.txt&#x27;)          // 扩展词典（用于调整原盘古词典）
+    .loadDict(&#x27;names.txt&#x27;)          // 常见名词、人名
+    .loadDict(&#x27;wildcard.txt&#x27;, &#x27;WILDCARD&#x27;, true)   // 通配符
+    .loadSynonymDict(&#x27;synonym.txt&#x27;)   // 同义词
+    .loadStopwordDict(&#x27;stopword.txt&#x27;) // 停止符
+  ;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Tokenizer" id="apidoc.element.segment.Tokenizer">
+        function <span class="apidocSignatureSpan">segment.</span>Tokenizer
+        <span class="apidocSignatureSpan">(segment)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Tokenizer = function (segment) {
+  this.segment = segment;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.segment.toString" id="apidoc.element.segment.toString">
+        function <span class="apidocSignatureSpan">segment.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  line += ret[i].w + &#x27;/&#x27;;
+  ret[i].ps = POSTAG.chsName(ret[i].p);
+}
+console.log(ret);
+console.log(line);
+console.log(&#x27;spent &#x27; + ((e - s) / NUM) + &#x27;ms&#x27;);
+return;
+console.log(segment.<span class="apidocCodeKeywordSpan">toString</span>(ret));
+var split = segment.split(ret, &#x27;是&#x27;);
+for (var i in split)
+  console.log(segment.toString(split[i]));
+console.log(segment.indexOf(ret, &#x27;的&#x27;, 3));
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.segment.Optimizer" id="apidoc.module.segment.Optimizer">module segment.Optimizer</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Optimizer.Optimizer" id="apidoc.element.segment.Optimizer.Optimizer">
+        function <span class="apidocSignatureSpan">segment.</span>Optimizer
+        <span class="apidocSignatureSpan">(segment)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Optimizer = function (segment) {
+  this.segment = segment;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.segment.Optimizer.prototype" id="apidoc.module.segment.Optimizer.prototype">module segment.Optimizer.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Optimizer.prototype.doOptimize" id="apidoc.element.segment.Optimizer.prototype.doOptimize">
+        function <span class="apidocSignatureSpan">segment.Optimizer.prototype.</span>doOptimize
+        <span class="apidocSignatureSpan">(words, modules)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">doOptimize = function (words, modules) {
+  // 按顺序分别调用各个module来进行分词 ： 各个module仅对没有识别类型的单词进行分词
+  modules.forEach(function (module) {
+    words = module.doOptimize(words);
+  });
+  return words;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @param {array} words 单词数组
+ * @param {array} modules 分词模块数组
+ * @return {array}
+ */
+Optimizer.prototype.doOptimize = function (words, modules) {
+  // 按顺序分别调用各个module来进行分词 ： 各个module仅对没有识别类型的单词进行分词
+  modules.forEach(function (module) {
+    words = module.<span class="apidocCodeKeywordSpan">doOptimize</span>(words);
+  });
+  return words;
+};
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.segment.POSTAG" id="apidoc.module.segment.POSTAG">module segment.POSTAG</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.segment.POSTAG.chsName" id="apidoc.element.segment.POSTAG.chsName">
+        function <span class="apidocSignatureSpan">segment.POSTAG.</span>chsName
+        <span class="apidocSignatureSpan">(p)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">chsName = function (p) {
+  if (isNaN(p)) {
+    return CHSNAME[p] || CHSNAME.UNK;
+  } else {
+    var ret = [];
+    for (var i in _POSTAG) {
+      if ((p &#x26; _POSTAG[i]) &#x3e; 0) {
+        ret.push(CHSNAME[i]);
+      }
+    }
+    if (ret.length &#x3c; 1) {
+      return CHSNAME.UNK;
+    } else {
+      return ret.toString();
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  var ret = segment.doSegment(text);
+
+////////////////////////////////////////////////////////////
+var e = new Date().getTime();
+var line = &#x27;&#x27;;
+for (var i in ret) {
+  line += ret[i].w + &#x27;/&#x27;;
+  ret[i].ps = POSTAG.<span class="apidocCodeKeywordSpan">chsName</span>(ret[i].p);
+}
+console.log(ret);
+console.log(line);
+console.log(&#x27;spent &#x27; + ((e - s) / NUM) + &#x27;ms&#x27;);
+return;
+console.log(segment.toString(ret));
+var split = segment.split(ret, &#x27;是&#x27;);
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.segment.POSTAG.chsName" id="apidoc.module.segment.POSTAG.chsName">module segment.POSTAG.chsName</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.segment.POSTAG.chsName.chsName" id="apidoc.element.segment.POSTAG.chsName.chsName">
+        function <span class="apidocSignatureSpan">segment.POSTAG.</span>chsName
+        <span class="apidocSignatureSpan">(p)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">chsName = function (p) {
+  if (isNaN(p)) {
+    return CHSNAME[p] || CHSNAME.UNK;
+  } else {
+    var ret = [];
+    for (var i in _POSTAG) {
+      if ((p &#x26; _POSTAG[i]) &#x3e; 0) {
+        ret.push(CHSNAME[i]);
+      }
+    }
+    if (ret.length &#x3c; 1) {
+      return CHSNAME.UNK;
+    } else {
+      return ret.toString();
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  var ret = segment.doSegment(text);
+
+////////////////////////////////////////////////////////////
+var e = new Date().getTime();
+var line = &#x27;&#x27;;
+for (var i in ret) {
+  line += ret[i].w + &#x27;/&#x27;;
+  ret[i].ps = POSTAG.<span class="apidocCodeKeywordSpan">chsName</span>(ret[i].p);
+}
+console.log(ret);
+console.log(line);
+console.log(&#x27;spent &#x27; + ((e - s) / NUM) + &#x27;ms&#x27;);
+return;
+console.log(segment.toString(ret));
+var split = segment.split(ret, &#x27;是&#x27;);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.segment.Segment" id="apidoc.module.segment.Segment">module segment.Segment</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.Segment" id="apidoc.element.segment.Segment.Segment">
+        function <span class="apidocSignatureSpan">segment.</span>Segment
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Segment = function () {
+  this.POSTAG = POSTAG; // 词性
+  this.DICT = {};       // 词典表
+  this.modules = {
+    tokenizer:  [],     // 分词模块
+    optimizer:  []      // 优化模块
+  };
+  this.tokenizer = new Tokenizer(this);
+  this.optimizer = new Optimizer(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.segment.Segment.prototype" id="apidoc.module.segment.Segment.prototype">module segment.Segment.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype._resolveDictFilename" id="apidoc.element.segment.Segment.prototype._resolveDictFilename">
+        function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>_resolveDictFilename
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_resolveDictFilename = function (name) {
+  var filename = path.resolve(name);
+  if (!fs.existsSync(filename)) {
+    var filename = path.resolve(__dirname, &#x27;../dicts&#x27;, name);
+    if (!fs.existsSync(filename)) {
+      throw Error(&#x27;Cannot find dict file &#x22;&#x27; + filename + &#x27;&#x22;.&#x27;);
+    }
+  }
+  return filename;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.doSegment" id="apidoc.element.segment.Segment.prototype.doSegment">
+        function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>doSegment
+        <span class="apidocSignatureSpan">(text, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">doSegment = function (text, options) {
+  var me = this;
+  options = options || {};
+  var ret = [];
+
+  // 将文本按照换行符分割成多段，并逐一分词
+  text.replace(/\r/g, &#x27;\n&#x27;).split(/(\n|\s)+/).forEach(function (section) {
+    var section = section.trim();
+    if (section.length &#x3c; 1) return;
+    // ======================================
+    // 分词
+    var sret = me.tokenizer.split(section, me.modules.tokenizer);
+
+    // 优化
+    sret = me.optimizer.doOptimize(sret, me.modules.optimizer);
+
+    // ======================================
+    // 连接分词结果
+    if (sret.length &#x3e; 0) ret = ret.concat(sret);
+  });
+
+  // 去除标点符号
+  if (options.stripPunctuation) {
+    ret = ret.filter(function (item) {
+      return item.p !== POSTAG.D_W;
+    });
+  }
+
+  // 转换同义词
+  function convertSynonym (list) {
+    var count = 0;
+    var TABLE = me.getDict(&#x27;SYNONYM&#x27;);
+    list = list.map(function (item) {
+      if (item.w in TABLE) {
+        count++;
+        return {w: TABLE[item.w], p: item.p};
+      } else {
+        return item;
+      }
+    });
+    return {count: count, list: list};
+  }
+  if (options.convertSynonym) {
+    do {
+      var result = convertSynonym(ret);
+      ret = result.list;
+    } while (result.count &#x3e; 0);
+  }
+
+  // 去除停止符
+  if (options.stripStopword) {
+    var STOPWORD = me.getDict(&#x27;STOPWORD&#x27;);
+    ret = ret.filter(function (item) {
+      return !(item.w in STOPWORD);
+    });
+  }
+
+  // 仅返回单词内容
+  if (options.simple) {
+    ret = ret.map(function (item) {
+      return item.w;
+    });
+  }
+
+  return ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var Segment = require(&#x27;segment&#x27;);
+// 创建实例
+var segment = new Segment();
+// 使用默认的识别模块及字典，载入字典文件需要1秒，仅初始化时执行一次即可
+segment.useDefault();
+
+// 开始分词
+console.log(segment.<span class="apidocCodeKeywordSpan">doSegment</span>(&#x27;这是一个基于Node.js的中文分词模块。&#x27;));
+```
+
+返回结果格式：
+
+```javascript
+[ { w: &#x27;这是&#x27;, p: 0 },
+{ w: &#x27;一个&#x27;, p: 2097152 },
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.getDict" id="apidoc.element.segment.Segment.prototype.getDict">
+        function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>getDict
+        <span class="apidocSignatureSpan">(type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getDict = function (type) {
+  return this.DICT[type];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.indexOf" id="apidoc.element.segment.Segment.prototype.indexOf">
+        function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>indexOf
+        <span class="apidocSignatureSpan">(words, s, cur)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">indexOf = function (words, s, cur) {
+  cur = isNaN(cur) ? 0 : cur;
+  var f = typeof s === &#x27;string&#x27; ? &#x27;w&#x27; : &#x27;p&#x27;;
+
+  while (cur &#x3c; words.length) {
+    if (words[cur][f] == s) return cur;
+    cur++;
+  }
+
+  return -1;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+console.log(line);
+console.log(&#x27;spent &#x27; + ((e - s) / NUM) + &#x27;ms&#x27;);
+return;
+console.log(segment.toString(ret));
+var split = segment.split(ret, &#x27;是&#x27;);
+for (var i in split)
+  console.log(segment.toString(split[i]));
+console.log(segment.<span class="apidocCodeKeywordSpan">indexOf</span>(ret, &#x27;的&#x27;, 3));
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.loadDict" id="apidoc.element.segment.Segment.prototype.loadDict">
+        function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>loadDict
+        <span class="apidocSignatureSpan">(name, type, convert_to_lower)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loadDict = function (name, type, convert_to_lower) {
+  var filename = this._resolveDictFilename(name);
+  if (!type)  type = &#x27;TABLE&#x27;;     // 默认为TABLE
+
+  // 初始化词典
+  if (!this.DICT[type]) this.DICT[type] = {};
+  if (!this.DICT[type + &#x27;2&#x27;]) this.DICT[type + &#x27;2&#x27;] = {};
+  var TABLE = this.DICT[type];        // 词典表  &#x27;词&#x27; =&#x3e; {属性}
+  var TABLE2 = this.DICT[type + &#x27;2&#x27;]; // 词典表  &#x27;长度&#x27; =&#x3e; &#x27;词&#x27; =&#x3e; 属性
+  // 导入数据
+  var POSTAG = this.POSTAG;
+  var data = fs.readFileSync(filename, &#x27;utf8&#x27;);
+  if (convert_to_lower) data = data.toLowerCase();
+
+  data.split(/\r?\n/).forEach(function (line) {
+    var blocks = line.split(&#x27;|&#x27;);
+    if (blocks.length &#x3e; 2) {
+      var w = blocks[0].trim();
+      var p = Number(blocks[1]);
+      var f = Number(blocks[2]);
+
+      // 一定要检查单词是否为空，如果为空会导致Bug
+      if (w.length &#x3e; 0) {
+        TABLE[w] = {f: f, p: p};
+        if (!TABLE2[w.length]) TABLE2[w.length] = {};
+        TABLE2[w.length][w] = TABLE[w];
+      }
+    }
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+// 载入模块
+var Segment = require(&#x27;segment&#x27;);
+// 创建实例
+var segment = new Segment();
+// 配置，可根据实际情况增删，详见segment.useDefault()方法
+segment.use(&#x27;URLTokenizer&#x27;);  // 载入识别模块，详见lib/module目录，或者是自定义模块的绝对路径
+segment.<span class="apidocCodeKeywordSpan">loadDict</span>(&#x27;dict.txt&#x27;); // 载入字典，详见dicts目录，或者是自定义字典文件的绝对路径
+
+// 开始分词
+console.log(segment.doSegment(&#x27;这是一个基于Node.js的中文分词模块。&#x27;));
+```
+
+一般可通过 `segment.useDefault()` 来载入默认的配置，若要自定义加载，可参考 `useDefault()` 的代码：
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.loadStopwordDict" id="apidoc.element.segment.Segment.prototype.loadStopwordDict">
+        function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>loadStopwordDict
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loadStopwordDict = function (name) {
+  var filename = this._resolveDictFilename(name);
+  var type = &#x27;STOPWORD&#x27;;
+
+  // 初始化词典
+  if (!this.DICT[type]) this.DICT[type] = {};
+  var TABLE = this.DICT[type];        // 词典表  &#x27;同义词&#x27; =&#x3e; &#x27;标准词&#x27;
+  // 导入数据
+  var data = fs.readFileSync(filename, &#x27;utf8&#x27;);
+
+  data.split(/\r?\n/).forEach(function (line) {
+    line = line.trim();
+    if (line) {
+      TABLE[line] = true;
+    }
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+### 去除停止符
+
+载入词典：
+
+```javascript
+segment.<span class="apidocCodeKeywordSpan">loadStopwordDict</span>(&#x27;stopword.txt&#x27;);
+```
+
+词典格式：
+
+```
+之所以
+因为
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.loadSynonymDict" id="apidoc.element.segment.Segment.prototype.loadSynonymDict">
+        function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>loadSynonymDict
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loadSynonymDict = function (name) {
+  var filename = this._resolveDictFilename(name);
+  var type = &#x27;SYNONYM&#x27;;
+
+  // 初始化词典
+  if (!this.DICT[type]) this.DICT[type] = {};
+  var TABLE = this.DICT[type];        // 词典表  &#x27;同义词&#x27; =&#x3e; &#x27;标准词&#x27;
+  // 导入数据
+  var data = fs.readFileSync(filename, &#x27;utf8&#x27;);
+
+  data.split(/\r?\n/).forEach(function (line) {
+    var blocks = line.split(&#x27;,&#x27;);
+    if (blocks.length &#x3e; 1) {
+      var n1 = blocks[0].trim();
+      var n2 = blocks[1].trim();
+      TABLE[n1] = n2;
+      if (TABLE[n2] === n1) {
+        delete TABLE[n2];
+      }
+    }
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+### 转换同义词
+
+载入同义词词典：
+
+```javascript
+segment.<span class="apidocCodeKeywordSpan">loadSynonymDict</span>(&#x27;synonym.txt&#x27;);
+```
+
+词典格式：
+
+```
+什么时候,何时
+入眠,入睡
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.split" id="apidoc.element.segment.Segment.prototype.split">
+        function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>split
+        <span class="apidocSignatureSpan">(words, s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">split = function (words, s) {
+  var ret = [];
+  var lasti = 0;
+  var i = 0;
+  var f = typeof s === &#x27;string&#x27; ? &#x27;w&#x27; : &#x27;p&#x27;;
+
+  while (i &#x3c; words.length) {
+    if (words[i][f] == s) {
+      if (lasti &#x3c; i) ret.push(words.slice(lasti, i));
+      ret.push(words.slice(i, i + 1));
+      i++;
+      lasti = i;
+    } else {
+      i++;
+    }
+  }
+  if (lasti &#x3c; words.length - 1) {
+    ret.push(words.slice(lasti, words.length));
+  }
+
+  return ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  ret[i].ps = POSTAG.chsName(ret[i].p);
+}
+console.log(ret);
+console.log(line);
+console.log(&#x27;spent &#x27; + ((e - s) / NUM) + &#x27;ms&#x27;);
+return;
+console.log(segment.toString(ret));
+var split = segment.<span class="apidocCodeKeywordSpan">split</span>(ret, &#x27;是&#x27;);
+for (var i in split)
+  console.log(segment.toString(split[i]));
+console.log(segment.indexOf(ret, &#x27;的&#x27;, 3));
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.toString" id="apidoc.element.segment.Segment.prototype.toString">
+        function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>toString
+        <span class="apidocSignatureSpan">(words)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function (words) {
+  return words.map(function (item) {
+    return item.w;
+  }).join(&#x27;&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  line += ret[i].w + &#x27;/&#x27;;
+  ret[i].ps = POSTAG.chsName(ret[i].p);
+}
+console.log(ret);
+console.log(line);
+console.log(&#x27;spent &#x27; + ((e - s) / NUM) + &#x27;ms&#x27;);
+return;
+console.log(segment.<span class="apidocCodeKeywordSpan">toString</span>(ret));
+var split = segment.split(ret, &#x27;是&#x27;);
+for (var i in split)
+  console.log(segment.toString(split[i]));
+console.log(segment.indexOf(ret, &#x27;的&#x27;, 3));
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.use" id="apidoc.element.segment.Segment.prototype.use">
+        function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>use
+        <span class="apidocSignatureSpan">(module)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">use = function (module) {
+  var me = this;
+
+  if (Array.isArray(module)) {
+    module.forEach(function (module) {
+      me.use(module[i]);
+    });
+
+  } else {
+    if (typeof module == &#x27;string&#x27;) {
+      var filename = path.resolve(__dirname, &#x27;module&#x27;, module + &#x27;.js&#x27;);
+      if (!fs.existsSync(filename)) {
+        throw Error(&#x27;Cannot find module &#x22;&#x27; + module + &#x27;&#x22;.&#x27;);
+      } else {
+        module = require(filename);
+      }
+    }
+    // 初始化并注册模块
+    module.init(this);
+    this.modules[module.type].push(module);
+  }
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```javascript
+// 载入模块
+var Segment = require(&#x27;segment&#x27;);
+// 创建实例
+var segment = new Segment();
+// 配置，可根据实际情况增删，详见segment.useDefault()方法
+segment.<span class="apidocCodeKeywordSpan">use</span>(&#x27;URLTokenizer&#x27;);  // 载入识别模块，详见lib/module目录，或者是自定义模块的绝对路径
+segment.loadDict(&#x27;dict.txt&#x27;); // 载入字典，详见dicts目录，或者是自定义字典文件的绝对路径
+
+// 开始分词
+console.log(segment.doSegment(&#x27;这是一个基于Node.js的中文分词模块。&#x27;));
+```
+
+一般可通过 `segment.useDefault()` 来载入默认的配置，若要自定义加载，可参考 `useDefault()` 的代码：
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.useDefault" id="apidoc.element.segment.Segment.prototype.useDefault">
+        function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>useDefault
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">useDefault = function () {
+  this
+    // 识别模块
+    // 强制分割类单词识别
+    .use(&#x27;URLTokenizer&#x27;)            // URL识别
+    .use(&#x27;WildcardTokenizer&#x27;)       // 通配符，必须在标点符号识别之前
+    .use(&#x27;PunctuationTokenizer&#x27;)    // 标点符号识别
+    .use(&#x27;ForeignTokenizer&#x27;)        // 外文字符、数字识别，必须在标点符号识别之后
+    // 中文单词识别
+    .use(&#x27;DictTokenizer&#x27;)           // 词典识别
+    .use(&#x27;ChsNameTokenizer&#x27;)        // 人名识别，建议在词典识别之后
+
+    // 优化模块
+    .use(&#x27;EmailOptimizer&#x27;)          // 邮箱地址识别
+    .use(&#x27;ChsNameOptimizer&#x27;)        // 人名识别优化
+    .use(&#x27;DictOptimizer&#x27;)           // 词典识别优化
+    .use(&#x27;DatetimeOptimizer&#x27;)       // 日期时间识别优化
+
+    // 字典文件
+    .loadDict(&#x27;dict.txt&#x27;)           // 盘古词典
+    .loadDict(&#x27;dict2.txt&#x27;)          // 扩展词典（用于调整原盘古词典）
+    .loadDict(&#x27;dict3.txt&#x27;)          // 扩展词典（用于调整原盘古词典）
+    .loadDict(&#x27;names.txt&#x27;)          // 常见名词、人名
+    .loadDict(&#x27;wildcard.txt&#x27;, &#x27;WILDCARD&#x27;, true)   // 通配符
+    .loadSynonymDict(&#x27;synonym.txt&#x27;)   // 同义词
+    .loadStopwordDict(&#x27;stopword.txt&#x27;) // 停止符
+  ;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```javascript
+// 载入模块
+var Segment = require(&#x27;segment&#x27;);
+// 创建实例
+var segment = new Segment();
+// 使用默认的识别模块及字典，载入字典文件需要1秒，仅初始化时执行一次即可
+segment.<span class="apidocCodeKeywordSpan">useDefault</span>();
+
+// 开始分词
+console.log(segment.doSegment(&#x27;这是一个基于Node.js的中文分词模块。&#x27;));
+```
+
+返回结果格式：
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.segment.Segment.prototype._resolveDictFilename" id="apidoc.module.segment.Segment.prototype._resolveDictFilename">module segment.Segment.prototype._resolveDictFilename</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype._resolveDictFilename._resolveDictFilename" id="apidoc.element.segment.Segment.prototype._resolveDictFilename._resolveDictFilename">
+        function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>_resolveDictFilename
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_resolveDictFilename = function (name) {
+  var filename = path.resolve(name);
+  if (!fs.existsSync(filename)) {
+    var filename = path.resolve(__dirname, &#x27;../dicts&#x27;, name);
+    if (!fs.existsSync(filename)) {
+      throw Error(&#x27;Cannot find dict file &#x22;&#x27; + filename + &#x27;&#x22;.&#x27;);
+    }
+  }
+  return filename;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.segment.Segment.prototype.doSegment" id="apidoc.module.segment.Segment.prototype.doSegment">module segment.Segment.prototype.doSegment</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.doSegment.doSegment" id="apidoc.element.segment.Segment.prototype.doSegment.doSegment">
+        function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>doSegment
+        <span class="apidocSignatureSpan">(text, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">doSegment = function (text, options) {
+  var me = this;
+  options = options || {};
+  var ret = [];
+
+  // 将文本按照换行符分割成多段，并逐一分词
+  text.replace(/\r/g, &#x27;\n&#x27;).split(/(\n|\s)+/).forEach(function (section) {
+    var section = section.trim();
+    if (section.length &#x3c; 1) return;
+    // ======================================
+    // 分词
+    var sret = me.tokenizer.split(section, me.modules.tokenizer);
+
+    // 优化
+    sret = me.optimizer.doOptimize(sret, me.modules.optimizer);
+
+    // ======================================
+    // 连接分词结果
+    if (sret.length &#x3e; 0) ret = ret.concat(sret);
+  });
+
+  // 去除标点符号
+  if (options.stripPunctuation) {
+    ret = ret.filter(function (item) {
+      return item.p !== POSTAG.D_W;
+    });
+  }
+
+  // 转换同义词
+  function convertSynonym (list) {
+    var count = 0;
+    var TABLE = me.getDict(&#x27;SYNONYM&#x27;);
+    list = list.map(function (item) {
+      if (item.w in TABLE) {
+        count++;
+        return {w: TABLE[item.w], p: item.p};
+      } else {
+        return item;
+      }
+    });
+    return {count: count, list: list};
+  }
+  if (options.convertSynonym) {
+    do {
+      var result = convertSynonym(ret);
+      ret = result.list;
+    } while (result.count &#x3e; 0);
+  }
+
+  // 去除停止符
+  if (options.stripStopword) {
+    var STOPWORD = me.getDict(&#x27;STOPWORD&#x27;);
+    ret = ret.filter(function (item) {
+      return !(item.w in STOPWORD);
+    });
+  }
+
+  // 仅返回单词内容
+  if (options.simple) {
+    ret = ret.map(function (item) {
+      return item.w;
+    });
+  }
+
+  return ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var Segment = require(&#x27;segment&#x27;);
+// 创建实例
+var segment = new Segment();
+// 使用默认的识别模块及字典，载入字典文件需要1秒，仅初始化时执行一次即可
+segment.useDefault();
+
+// 开始分词
+console.log(segment.<span class="apidocCodeKeywordSpan">doSegment</span>(&#x27;这是一个基于Node.js的中文分词模块。&#x27;));
+```
+
+返回结果格式：
+
+```javascript
+[ { w: &#x27;这是&#x27;, p: 0 },
+{ w: &#x27;一个&#x27;, p: 2097152 },
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.segment.Segment.prototype.getDict" id="apidoc.module.segment.Segment.prototype.getDict">module segment.Segment.prototype.getDict</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.getDict.getDict" id="apidoc.element.segment.Segment.prototype.getDict.getDict">
+        function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>getDict
+        <span class="apidocSignatureSpan">(type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getDict = function (type) {
+  return this.DICT[type];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.segment.Segment.prototype.indexOf" id="apidoc.module.segment.Segment.prototype.indexOf">module segment.Segment.prototype.indexOf</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.indexOf.indexOf" id="apidoc.element.segment.Segment.prototype.indexOf.indexOf">
+        function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>indexOf
+        <span class="apidocSignatureSpan">(words, s, cur)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">indexOf = function (words, s, cur) {
+  cur = isNaN(cur) ? 0 : cur;
+  var f = typeof s === &#x27;string&#x27; ? &#x27;w&#x27; : &#x27;p&#x27;;
+
+  while (cur &#x3c; words.length) {
+    if (words[cur][f] == s) return cur;
+    cur++;
+  }
+
+  return -1;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+console.log(line);
+console.log(&#x27;spent &#x27; + ((e - s) / NUM) + &#x27;ms&#x27;);
+return;
+console.log(segment.toString(ret));
+var split = segment.split(ret, &#x27;是&#x27;);
+for (var i in split)
+  console.log(segment.toString(split[i]));
+console.log(segment.<span class="apidocCodeKeywordSpan">indexOf</span>(ret, &#x27;的&#x27;, 3));
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.segment.Segment.prototype.loadDict" id="apidoc.module.segment.Segment.prototype.loadDict">module segment.Segment.prototype.loadDict</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.loadDict.loadDict" id="apidoc.element.segment.Segment.prototype.loadDict.loadDict">
+        function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>loadDict
+        <span class="apidocSignatureSpan">(name, type, convert_to_lower)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loadDict = function (name, type, convert_to_lower) {
+  var filename = this._resolveDictFilename(name);
+  if (!type)  type = &#x27;TABLE&#x27;;     // 默认为TABLE
+
+  // 初始化词典
+  if (!this.DICT[type]) this.DICT[type] = {};
+  if (!this.DICT[type + &#x27;2&#x27;]) this.DICT[type + &#x27;2&#x27;] = {};
+  var TABLE = this.DICT[type];        // 词典表  &#x27;词&#x27; =&#x3e; {属性}
+  var TABLE2 = this.DICT[type + &#x27;2&#x27;]; // 词典表  &#x27;长度&#x27; =&#x3e; &#x27;词&#x27; =&#x3e; 属性
+  // 导入数据
+  var POSTAG = this.POSTAG;
+  var data = fs.readFileSync(filename, &#x27;utf8&#x27;);
+  if (convert_to_lower) data = data.toLowerCase();
+
+  data.split(/\r?\n/).forEach(function (line) {
+    var blocks = line.split(&#x27;|&#x27;);
+    if (blocks.length &#x3e; 2) {
+      var w = blocks[0].trim();
+      var p = Number(blocks[1]);
+      var f = Number(blocks[2]);
+
+      // 一定要检查单词是否为空，如果为空会导致Bug
+      if (w.length &#x3e; 0) {
+        TABLE[w] = {f: f, p: p};
+        if (!TABLE2[w.length]) TABLE2[w.length] = {};
+        TABLE2[w.length][w] = TABLE[w];
+      }
+    }
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+// 载入模块
+var Segment = require(&#x27;segment&#x27;);
+// 创建实例
+var segment = new Segment();
+// 配置，可根据实际情况增删，详见segment.useDefault()方法
+segment.use(&#x27;URLTokenizer&#x27;);  // 载入识别模块，详见lib/module目录，或者是自定义模块的绝对路径
+segment.<span class="apidocCodeKeywordSpan">loadDict</span>(&#x27;dict.txt&#x27;); // 载入字典，详见dicts目录，或者是自定义字典文件的绝对路径
+
+// 开始分词
+console.log(segment.doSegment(&#x27;这是一个基于Node.js的中文分词模块。&#x27;));
+```
+
+一般可通过 `segment.useDefault()` 来载入默认的配置，若要自定义加载，可参考 `useDefault()` 的代码：
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.segment.Segment.prototype.loadStopwordDict" id="apidoc.module.segment.Segment.prototype.loadStopwordDict">module segment.Segment.prototype.loadStopwordDict</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.loadStopwordDict.loadStopwordDict" id="apidoc.element.segment.Segment.prototype.loadStopwordDict.loadStopwordDict">
+        function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>loadStopwordDict
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loadStopwordDict = function (name) {
+  var filename = this._resolveDictFilename(name);
+  var type = &#x27;STOPWORD&#x27;;
+
+  // 初始化词典
+  if (!this.DICT[type]) this.DICT[type] = {};
+  var TABLE = this.DICT[type];        // 词典表  &#x27;同义词&#x27; =&#x3e; &#x27;标准词&#x27;
+  // 导入数据
+  var data = fs.readFileSync(filename, &#x27;utf8&#x27;);
+
+  data.split(/\r?\n/).forEach(function (line) {
+    line = line.trim();
+    if (line) {
+      TABLE[line] = true;
+    }
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+### 去除停止符
+
+载入词典：
+
+```javascript
+segment.<span class="apidocCodeKeywordSpan">loadStopwordDict</span>(&#x27;stopword.txt&#x27;);
+```
+
+词典格式：
+
+```
+之所以
+因为
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.segment.Segment.prototype.loadSynonymDict" id="apidoc.module.segment.Segment.prototype.loadSynonymDict">module segment.Segment.prototype.loadSynonymDict</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.loadSynonymDict.loadSynonymDict" id="apidoc.element.segment.Segment.prototype.loadSynonymDict.loadSynonymDict">
+        function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>loadSynonymDict
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loadSynonymDict = function (name) {
+  var filename = this._resolveDictFilename(name);
+  var type = &#x27;SYNONYM&#x27;;
+
+  // 初始化词典
+  if (!this.DICT[type]) this.DICT[type] = {};
+  var TABLE = this.DICT[type];        // 词典表  &#x27;同义词&#x27; =&#x3e; &#x27;标准词&#x27;
+  // 导入数据
+  var data = fs.readFileSync(filename, &#x27;utf8&#x27;);
+
+  data.split(/\r?\n/).forEach(function (line) {
+    var blocks = line.split(&#x27;,&#x27;);
+    if (blocks.length &#x3e; 1) {
+      var n1 = blocks[0].trim();
+      var n2 = blocks[1].trim();
+      TABLE[n1] = n2;
+      if (TABLE[n2] === n1) {
+        delete TABLE[n2];
+      }
+    }
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+### 转换同义词
+
+载入同义词词典：
+
+```javascript
+segment.<span class="apidocCodeKeywordSpan">loadSynonymDict</span>(&#x27;synonym.txt&#x27;);
+```
+
+词典格式：
+
+```
+什么时候,何时
+入眠,入睡
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.segment.Segment.prototype.split" id="apidoc.module.segment.Segment.prototype.split">module segment.Segment.prototype.split</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.split.split" id="apidoc.element.segment.Segment.prototype.split.split">
+        function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>split
+        <span class="apidocSignatureSpan">(words, s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">split = function (words, s) {
+  var ret = [];
+  var lasti = 0;
+  var i = 0;
+  var f = typeof s === &#x27;string&#x27; ? &#x27;w&#x27; : &#x27;p&#x27;;
+
+  while (i &#x3c; words.length) {
+    if (words[i][f] == s) {
+      if (lasti &#x3c; i) ret.push(words.slice(lasti, i));
+      ret.push(words.slice(i, i + 1));
+      i++;
+      lasti = i;
+    } else {
+      i++;
+    }
+  }
+  if (lasti &#x3c; words.length - 1) {
+    ret.push(words.slice(lasti, words.length));
+  }
+
+  return ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  ret[i].ps = POSTAG.chsName(ret[i].p);
+}
+console.log(ret);
+console.log(line);
+console.log(&#x27;spent &#x27; + ((e - s) / NUM) + &#x27;ms&#x27;);
+return;
+console.log(segment.toString(ret));
+var split = segment.<span class="apidocCodeKeywordSpan">split</span>(ret, &#x27;是&#x27;);
+for (var i in split)
+  console.log(segment.toString(split[i]));
+console.log(segment.indexOf(ret, &#x27;的&#x27;, 3));
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.segment.Segment.prototype.toString" id="apidoc.module.segment.Segment.prototype.toString">module segment.Segment.prototype.toString</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.toString.toString" id="apidoc.element.segment.Segment.prototype.toString.toString">
+        function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  line += ret[i].w + &#x27;/&#x27;;
+  ret[i].ps = POSTAG.chsName(ret[i].p);
+}
+console.log(ret);
+console.log(line);
+console.log(&#x27;spent &#x27; + ((e - s) / NUM) + &#x27;ms&#x27;);
+return;
+console.log(segment.<span class="apidocCodeKeywordSpan">toString</span>(ret));
+var split = segment.split(ret, &#x27;是&#x27;);
+for (var i in split)
+  console.log(segment.toString(split[i]));
+console.log(segment.indexOf(ret, &#x27;的&#x27;, 3));
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.segment.Segment.prototype.use" id="apidoc.module.segment.Segment.prototype.use">module segment.Segment.prototype.use</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.use.use" id="apidoc.element.segment.Segment.prototype.use.use">
+        function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>use
+        <span class="apidocSignatureSpan">(module)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">use = function (module) {
+  var me = this;
+
+  if (Array.isArray(module)) {
+    module.forEach(function (module) {
+      me.use(module[i]);
+    });
+
+  } else {
+    if (typeof module == &#x27;string&#x27;) {
+      var filename = path.resolve(__dirname, &#x27;module&#x27;, module + &#x27;.js&#x27;);
+      if (!fs.existsSync(filename)) {
+        throw Error(&#x27;Cannot find module &#x22;&#x27; + module + &#x27;&#x22;.&#x27;);
+      } else {
+        module = require(filename);
+      }
+    }
+    // 初始化并注册模块
+    module.init(this);
+    this.modules[module.type].push(module);
+  }
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```javascript
+// 载入模块
+var Segment = require(&#x27;segment&#x27;);
+// 创建实例
+var segment = new Segment();
+// 配置，可根据实际情况增删，详见segment.useDefault()方法
+segment.<span class="apidocCodeKeywordSpan">use</span>(&#x27;URLTokenizer&#x27;);  // 载入识别模块，详见lib/module目录，或者是自定义模块的绝对路径
+segment.loadDict(&#x27;dict.txt&#x27;); // 载入字典，详见dicts目录，或者是自定义字典文件的绝对路径
+
+// 开始分词
+console.log(segment.doSegment(&#x27;这是一个基于Node.js的中文分词模块。&#x27;));
+```
+
+一般可通过 `segment.useDefault()` 来载入默认的配置，若要自定义加载，可参考 `useDefault()` 的代码：
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.segment.Segment.prototype.useDefault" id="apidoc.module.segment.Segment.prototype.useDefault">module segment.Segment.prototype.useDefault</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.useDefault.useDefault" id="apidoc.element.segment.Segment.prototype.useDefault.useDefault">
+        function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>useDefault
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">useDefault = function () {
+  this
+    // 识别模块
+    // 强制分割类单词识别
+    .use(&#x27;URLTokenizer&#x27;)            // URL识别
+    .use(&#x27;WildcardTokenizer&#x27;)       // 通配符，必须在标点符号识别之前
+    .use(&#x27;PunctuationTokenizer&#x27;)    // 标点符号识别
+    .use(&#x27;ForeignTokenizer&#x27;)        // 外文字符、数字识别，必须在标点符号识别之后
+    // 中文单词识别
+    .use(&#x27;DictTokenizer&#x27;)           // 词典识别
+    .use(&#x27;ChsNameTokenizer&#x27;)        // 人名识别，建议在词典识别之后
+
+    // 优化模块
+    .use(&#x27;EmailOptimizer&#x27;)          // 邮箱地址识别
+    .use(&#x27;ChsNameOptimizer&#x27;)        // 人名识别优化
+    .use(&#x27;DictOptimizer&#x27;)           // 词典识别优化
+    .use(&#x27;DatetimeOptimizer&#x27;)       // 日期时间识别优化
+
+    // 字典文件
+    .loadDict(&#x27;dict.txt&#x27;)           // 盘古词典
+    .loadDict(&#x27;dict2.txt&#x27;)          // 扩展词典（用于调整原盘古词典）
+    .loadDict(&#x27;dict3.txt&#x27;)          // 扩展词典（用于调整原盘古词典）
+    .loadDict(&#x27;names.txt&#x27;)          // 常见名词、人名
+    .loadDict(&#x27;wildcard.txt&#x27;, &#x27;WILDCARD&#x27;, true)   // 通配符
+    .loadSynonymDict(&#x27;synonym.txt&#x27;)   // 同义词
+    .loadStopwordDict(&#x27;stopword.txt&#x27;) // 停止符
+  ;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```javascript
+// 载入模块
+var Segment = require(&#x27;segment&#x27;);
+// 创建实例
+var segment = new Segment();
+// 使用默认的识别模块及字典，载入字典文件需要1秒，仅初始化时执行一次即可
+segment.<span class="apidocCodeKeywordSpan">useDefault</span>();
+
+// 开始分词
+console.log(segment.doSegment(&#x27;这是一个基于Node.js的中文分词模块。&#x27;));
+```
+
+返回结果格式：
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.segment.Tokenizer" id="apidoc.module.segment.Tokenizer">module segment.Tokenizer</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Tokenizer.Tokenizer" id="apidoc.element.segment.Tokenizer.Tokenizer">
+        function <span class="apidocSignatureSpan">segment.</span>Tokenizer
+        <span class="apidocSignatureSpan">(segment)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Tokenizer = function (segment) {
+  this.segment = segment;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.segment.Tokenizer.prototype" id="apidoc.module.segment.Tokenizer.prototype">module segment.Tokenizer.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Tokenizer.prototype.split" id="apidoc.element.segment.Tokenizer.prototype.split">
+        function <span class="apidocSignatureSpan">segment.Tokenizer.prototype.</span>split
+        <span class="apidocSignatureSpan">(text, modules)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">split = function (text, modules) {
+  if (modules.length &#x3c; 1) {
+    throw Error(&#x27;No tokenizer module!&#x27;);
+  } else {
+    // 按顺序分别调用各个module来进行分词 ： 各个module仅对没有识别类型的单词进行分词
+    var ret = [{w: text}];
+    modules.forEach(function (module) {
+      ret = module.split(ret);
+    });
+    return ret;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  ret[i].ps = POSTAG.chsName(ret[i].p);
+}
+console.log(ret);
+console.log(line);
+console.log(&#x27;spent &#x27; + ((e - s) / NUM) + &#x27;ms&#x27;);
+return;
+console.log(segment.toString(ret));
+var split = segment.<span class="apidocCodeKeywordSpan">split</span>(ret, &#x27;是&#x27;);
+for (var i in split)
+  console.log(segment.toString(split[i]));
+console.log(segment.indexOf(ret, &#x27;的&#x27;, 3));
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.segment.toString" id="apidoc.module.segment.toString">module segment.toString</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.segment.toString.toString" id="apidoc.element.segment.toString.toString">
+        function <span class="apidocSignatureSpan">segment.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  line += ret[i].w + &#x27;/&#x27;;
+  ret[i].ps = POSTAG.chsName(ret[i].p);
+}
+console.log(ret);
+console.log(line);
+console.log(&#x27;spent &#x27; + ((e - s) / NUM) + &#x27;ms&#x27;);
+return;
+console.log(segment.<span class="apidocCodeKeywordSpan">toString</span>(ret));
+var split = segment.split(ret, &#x27;是&#x27;);
+for (var i in split)
+  console.log(segment.toString(split[i]));
+console.log(segment.indexOf(ret, &#x27;的&#x27;, 3));
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>

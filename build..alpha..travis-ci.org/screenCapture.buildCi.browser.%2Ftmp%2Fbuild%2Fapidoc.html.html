@@ -1,0 +1,3000 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/leizongmin/node-segment#readme">segment (v0.1.3)</a>
+</h1>
+<h4>Chinese word segmentation ä¸­æ–‡åˆ†è¯æ¨¡å—</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.segment">module segment</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.segment">
+            function <span class="apidocSignatureSpan"></span>segment
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Optimizer">
+            function <span class="apidocSignatureSpan">segment.</span>Optimizer
+            <span class="apidocSignatureSpan">(segment)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.POSTAG.chsName">
+            function <span class="apidocSignatureSpan">segment.</span>POSTAG.chsName
+            <span class="apidocSignatureSpan">(p)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment">
+            function <span class="apidocSignatureSpan">segment.</span>Segment
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype._resolveDictFilename">
+            function <span class="apidocSignatureSpan">segment.</span>Segment.prototype._resolveDictFilename
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.doSegment">
+            function <span class="apidocSignatureSpan">segment.</span>Segment.prototype.doSegment
+            <span class="apidocSignatureSpan">(text, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.getDict">
+            function <span class="apidocSignatureSpan">segment.</span>Segment.prototype.getDict
+            <span class="apidocSignatureSpan">(type)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.indexOf">
+            function <span class="apidocSignatureSpan">segment.</span>Segment.prototype.indexOf
+            <span class="apidocSignatureSpan">(words, s, cur)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.loadDict">
+            function <span class="apidocSignatureSpan">segment.</span>Segment.prototype.loadDict
+            <span class="apidocSignatureSpan">(name, type, convert_to_lower)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.loadStopwordDict">
+            function <span class="apidocSignatureSpan">segment.</span>Segment.prototype.loadStopwordDict
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.loadSynonymDict">
+            function <span class="apidocSignatureSpan">segment.</span>Segment.prototype.loadSynonymDict
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.split">
+            function <span class="apidocSignatureSpan">segment.</span>Segment.prototype.split
+            <span class="apidocSignatureSpan">(words, s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.toString">
+            function <span class="apidocSignatureSpan">segment.</span>Segment.prototype.toString
+            <span class="apidocSignatureSpan">(words)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.use">
+            function <span class="apidocSignatureSpan">segment.</span>Segment.prototype.use
+            <span class="apidocSignatureSpan">(module)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.useDefault">
+            function <span class="apidocSignatureSpan">segment.</span>Segment.prototype.useDefault
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Tokenizer">
+            function <span class="apidocSignatureSpan">segment.</span>Tokenizer
+            <span class="apidocSignatureSpan">(segment)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.toString">
+            function <span class="apidocSignatureSpan">segment.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">segment.</span>Optimizer.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">segment.</span>POSTAG</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">segment.</span>Segment.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">segment.</span>Tokenizer.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">segment.</span>version</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.segment.Optimizer">module segment.Optimizer</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Optimizer.Optimizer">
+            function <span class="apidocSignatureSpan">segment.</span>Optimizer
+            <span class="apidocSignatureSpan">(segment)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.segment.Optimizer.prototype">module segment.Optimizer.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Optimizer.prototype.doOptimize">
+            function <span class="apidocSignatureSpan">segment.Optimizer.prototype.</span>doOptimize
+            <span class="apidocSignatureSpan">(words, modules)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.segment.POSTAG">module segment.POSTAG</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.POSTAG.chsName">
+            function <span class="apidocSignatureSpan">segment.POSTAG.</span>chsName
+            <span class="apidocSignatureSpan">(p)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>A_M</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>A_NR</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>A_NS</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>A_NT</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>A_NX</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>A_NZ</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>A_Q</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>D_A</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>D_B</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>D_C</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>D_D</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>D_E</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>D_F</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>D_I</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>D_K</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>D_L</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>D_MQ</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>D_N</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>D_O</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>D_P</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>D_R</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>D_S</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>D_T</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>D_U</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>D_V</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>D_W</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>D_X</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>D_Y</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>D_Z</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>D_ZH</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>UNK</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>URL</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>a_m</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>a_nr</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>a_ns</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>a_nt</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>a_nx</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>a_nz</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>a_q</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>d_a</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>d_b</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>d_c</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>d_d</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>d_e</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>d_f</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>d_i</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>d_k</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>d_l</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>d_mq</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>d_n</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>d_o</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>d_p</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>d_r</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>d_s</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>d_t</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>d_u</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>d_v</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>d_w</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>d_x</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>d_y</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>d_z</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>d_zh</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>unk</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">segment.POSTAG.</span>url</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">segment.POSTAG.</span>CHSNAME</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.segment.POSTAG.chsName">module segment.POSTAG.chsName</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.POSTAG.chsName.chsName">
+            function <span class="apidocSignatureSpan">segment.POSTAG.</span>chsName
+            <span class="apidocSignatureSpan">(p)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.segment.Segment">module segment.Segment</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.Segment">
+            function <span class="apidocSignatureSpan">segment.</span>Segment
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">segment.Segment.</span>POSTAG</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">segment.Segment.</span>version</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.segment.Segment.prototype">module segment.Segment.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype._resolveDictFilename">
+            function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>_resolveDictFilename
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.doSegment">
+            function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>doSegment
+            <span class="apidocSignatureSpan">(text, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.getDict">
+            function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>getDict
+            <span class="apidocSignatureSpan">(type)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.indexOf">
+            function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>indexOf
+            <span class="apidocSignatureSpan">(words, s, cur)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.loadDict">
+            function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>loadDict
+            <span class="apidocSignatureSpan">(name, type, convert_to_lower)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.loadStopwordDict">
+            function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>loadStopwordDict
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.loadSynonymDict">
+            function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>loadSynonymDict
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.split">
+            function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>split
+            <span class="apidocSignatureSpan">(words, s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.toString">
+            function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>toString
+            <span class="apidocSignatureSpan">(words)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.use">
+            function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>use
+            <span class="apidocSignatureSpan">(module)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.useDefault">
+            function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>useDefault
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.segment.Segment.prototype._resolveDictFilename">module segment.Segment.prototype._resolveDictFilename</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype._resolveDictFilename._resolveDictFilename">
+            function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>_resolveDictFilename
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.segment.Segment.prototype.doSegment">module segment.Segment.prototype.doSegment</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.doSegment.doSegment">
+            function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>doSegment
+            <span class="apidocSignatureSpan">(text, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.segment.Segment.prototype.getDict">module segment.Segment.prototype.getDict</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.getDict.getDict">
+            function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>getDict
+            <span class="apidocSignatureSpan">(type)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.segment.Segment.prototype.indexOf">module segment.Segment.prototype.indexOf</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.indexOf.indexOf">
+            function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>indexOf
+            <span class="apidocSignatureSpan">(words, s, cur)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.segment.Segment.prototype.loadDict">module segment.Segment.prototype.loadDict</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.loadDict.loadDict">
+            function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>loadDict
+            <span class="apidocSignatureSpan">(name, type, convert_to_lower)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.segment.Segment.prototype.loadStopwordDict">module segment.Segment.prototype.loadStopwordDict</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.loadStopwordDict.loadStopwordDict">
+            function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>loadStopwordDict
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.segment.Segment.prototype.loadSynonymDict">module segment.Segment.prototype.loadSynonymDict</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.loadSynonymDict.loadSynonymDict">
+            function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>loadSynonymDict
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.segment.Segment.prototype.split">module segment.Segment.prototype.split</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.split.split">
+            function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>split
+            <span class="apidocSignatureSpan">(words, s)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.segment.Segment.prototype.toString">module segment.Segment.prototype.toString</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.toString.toString">
+            function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.segment.Segment.prototype.use">module segment.Segment.prototype.use</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.use.use">
+            function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>use
+            <span class="apidocSignatureSpan">(module)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.segment.Segment.prototype.useDefault">module segment.Segment.prototype.useDefault</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Segment.prototype.useDefault.useDefault">
+            function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>useDefault
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.segment.Tokenizer">module segment.Tokenizer</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Tokenizer.Tokenizer">
+            function <span class="apidocSignatureSpan">segment.</span>Tokenizer
+            <span class="apidocSignatureSpan">(segment)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.segment.Tokenizer.prototype">module segment.Tokenizer.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.Tokenizer.prototype.split">
+            function <span class="apidocSignatureSpan">segment.Tokenizer.prototype.</span>split
+            <span class="apidocSignatureSpan">(text, modules)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.segment.toString">module segment.toString</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.segment.toString.toString">
+            function <span class="apidocSignatureSpan">segment.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.segment" id="apidoc.module.segment">module segment</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.segment.segment" id="apidoc.element.segment.segment">
+        function <span class="apidocSignatureSpan"></span>segment
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">segment = function () {
+  this.POSTAG = POSTAG; // è¯æ€§
+  this.DICT = {};       // è¯å…¸è¡¨
+  this.modules = {
+    tokenizer:  [],     // åˆ†è¯æ¨¡å—
+    optimizer:  []      // ä¼˜åŒ–æ¨¡å—
+  };
+  this.tokenizer = new Tokenizer(this);
+  this.optimizer = new Optimizer(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Optimizer" id="apidoc.element.segment.Optimizer">
+        function <span class="apidocSignatureSpan">segment.</span>Optimizer
+        <span class="apidocSignatureSpan">(segment)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Optimizer = function (segment) {
+  this.segment = segment;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.segment.POSTAG.chsName" id="apidoc.element.segment.POSTAG.chsName">
+        function <span class="apidocSignatureSpan">segment.</span>POSTAG.chsName
+        <span class="apidocSignatureSpan">(p)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">POSTAG.chsName = function (p) {
+  if (isNaN(p)) {
+    return CHSNAME[p] || CHSNAME.UNK;
+  } else {
+    var ret = [];
+    for (var i in _POSTAG) {
+      if ((p &amp; _POSTAG[i]) &gt; 0) {
+        ret.push(CHSNAME[i]);
+      }
+    }
+    if (ret.length &lt; 1) {
+      return CHSNAME.UNK;
+    } else {
+      return ret.toString();
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment" id="apidoc.element.segment.Segment">
+        function <span class="apidocSignatureSpan">segment.</span>Segment
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Segment = function () {
+  this.POSTAG = POSTAG; // è¯æ€§
+  this.DICT = {};       // è¯å…¸è¡¨
+  this.modules = {
+    tokenizer:  [],     // åˆ†è¯æ¨¡å—
+    optimizer:  []      // ä¼˜åŒ–æ¨¡å—
+  };
+  this.tokenizer = new Tokenizer(this);
+  this.optimizer = new Optimizer(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype._resolveDictFilename" id="apidoc.element.segment.Segment.prototype._resolveDictFilename">
+        function <span class="apidocSignatureSpan">segment.</span>Segment.prototype._resolveDictFilename
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Segment.prototype._resolveDictFilename = function (name) {
+  var filename = path.resolve(name);
+  if (!fs.existsSync(filename)) {
+    var filename = path.resolve(__dirname, '../dicts', name);
+    if (!fs.existsSync(filename)) {
+      throw Error('Cannot find dict file "' + filename + '".');
+    }
+  }
+  return filename;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.doSegment" id="apidoc.element.segment.Segment.prototype.doSegment">
+        function <span class="apidocSignatureSpan">segment.</span>Segment.prototype.doSegment
+        <span class="apidocSignatureSpan">(text, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Segment.prototype.doSegment = function (text, options) {
+  var me = this;
+  options = options || {};
+  var ret = [];
+
+  // å°†æ–‡æœ¬æŒ‰ç…§æ¢è¡Œç¬¦åˆ†å‰²æˆå¤šæ®µï¼Œå¹¶é€ä¸€åˆ†è¯
+  text.replace(/\r/g, '\n').split(/(\n|\s)+/).forEach(function (section) {
+    var section = section.trim();
+    if (section.length &lt; 1) return;
+    // ======================================
+    // åˆ†è¯
+    var sret = me.tokenizer.split(section, me.modules.tokenizer);
+
+    // ä¼˜åŒ–
+    sret = me.optimizer.doOptimize(sret, me.modules.optimizer);
+
+    // ======================================
+    // è¿žæŽ¥åˆ†è¯ç»“æžœ
+    if (sret.length &gt; 0) ret = ret.concat(sret);
+  });
+
+  // åŽ»é™¤æ&nbsp;‡ç‚¹ç¬¦å·
+  if (options.stripPunctuation) {
+    ret = ret.filter(function (item) {
+      return item.p !== POSTAG.D_W;
+    });
+  }
+
+  // è½¬æ¢åŒä¹‰è¯
+  function convertSynonym (list) {
+    var count = 0;
+    var TABLE = me.getDict('SYNONYM');
+    list = list.map(function (item) {
+      if (item.w in TABLE) {
+        count++;
+        return {w: TABLE[item.w], p: item.p};
+      } else {
+        return item;
+      }
+    });
+    return {count: count, list: list};
+  }
+  if (options.convertSynonym) {
+    do {
+      var result = convertSynonym(ret);
+      ret = result.list;
+    } while (result.count &gt; 0);
+  }
+
+  // åŽ»é™¤åœæ­¢ç¬¦
+  if (options.stripStopword) {
+    var STOPWORD = me.getDict('STOPWORD');
+    ret = ret.filter(function (item) {
+      return !(item.w in STOPWORD);
+    });
+  }
+
+  // ä»…è¿”å›žå•è¯å†…å®¹
+  if (options.simple) {
+    ret = ret.map(function (item) {
+      return item.w;
+    });
+  }
+
+  return ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.getDict" id="apidoc.element.segment.Segment.prototype.getDict">
+        function <span class="apidocSignatureSpan">segment.</span>Segment.prototype.getDict
+        <span class="apidocSignatureSpan">(type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Segment.prototype.getDict = function (type) {
+  return this.DICT[type];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.indexOf" id="apidoc.element.segment.Segment.prototype.indexOf">
+        function <span class="apidocSignatureSpan">segment.</span>Segment.prototype.indexOf
+        <span class="apidocSignatureSpan">(words, s, cur)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Segment.prototype.indexOf = function (words, s, cur) {
+  cur = isNaN(cur) ? 0 : cur;
+  var f = typeof s === 'string' ? 'w' : 'p';
+
+  while (cur &lt; words.length) {
+    if (words[cur][f] == s) return cur;
+    cur++;
+  }
+
+  return -1;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.loadDict" id="apidoc.element.segment.Segment.prototype.loadDict">
+        function <span class="apidocSignatureSpan">segment.</span>Segment.prototype.loadDict
+        <span class="apidocSignatureSpan">(name, type, convert_to_lower)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Segment.prototype.loadDict = function (name, type, convert_to_lower) {
+  var filename = this._resolveDictFilename(name);
+  if (!type)  type = 'TABLE';     // é»˜è®¤ä¸ºTABLE
+
+  // åˆå§‹åŒ–è¯å…¸
+  if (!this.DICT[type]) this.DICT[type] = {};
+  if (!this.DICT[type + '2']) this.DICT[type + '2'] = {};
+  var TABLE = this.DICT[type];        // è¯å…¸è¡¨  'è¯' =&gt; {å±žæ€§}
+  var TABLE2 = this.DICT[type + '2']; // è¯å…¸è¡¨  'é•¿åº¦' =&gt; 'è¯' =&gt; å±žæ€§
+  // å¯¼å…¥æ•°æ®
+  var POSTAG = this.POSTAG;
+  var data = fs.readFileSync(filename, 'utf8');
+  if (convert_to_lower) data = data.toLowerCase();
+
+  data.split(/\r?\n/).forEach(function (line) {
+    var blocks = line.split('|');
+    if (blocks.length &gt; 2) {
+      var w = blocks[0].trim();
+      var p = Number(blocks[1]);
+      var f = Number(blocks[2]);
+
+      // ä¸€å®šè¦æ£€æŸ¥å•è¯æ˜¯å¦ä¸ºç©ºï¼Œå¦‚æžœä¸ºç©ºä¼šå¯¼è‡´Bug
+      if (w.length &gt; 0) {
+        TABLE[w] = {f: f, p: p};
+        if (!TABLE2[w.length]) TABLE2[w.length] = {};
+        TABLE2[w.length][w] = TABLE[w];
+      }
+    }
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.loadStopwordDict" id="apidoc.element.segment.Segment.prototype.loadStopwordDict">
+        function <span class="apidocSignatureSpan">segment.</span>Segment.prototype.loadStopwordDict
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Segment.prototype.loadStopwordDict = function (name) {
+  var filename = this._resolveDictFilename(name);
+  var type = 'STOPWORD';
+
+  // åˆå§‹åŒ–è¯å…¸
+  if (!this.DICT[type]) this.DICT[type] = {};
+  var TABLE = this.DICT[type];        // è¯å…¸è¡¨  'åŒä¹‰è¯' =&gt; 'æ&nbsp;‡å‡†è¯'
+  // å¯¼å…¥æ•°æ®
+  var data = fs.readFileSync(filename, 'utf8');
+
+  data.split(/\r?\n/).forEach(function (line) {
+    line = line.trim();
+    if (line) {
+      TABLE[line] = true;
+    }
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.loadSynonymDict" id="apidoc.element.segment.Segment.prototype.loadSynonymDict">
+        function <span class="apidocSignatureSpan">segment.</span>Segment.prototype.loadSynonymDict
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Segment.prototype.loadSynonymDict = function (name) {
+  var filename = this._resolveDictFilename(name);
+  var type = 'SYNONYM';
+
+  // åˆå§‹åŒ–è¯å…¸
+  if (!this.DICT[type]) this.DICT[type] = {};
+  var TABLE = this.DICT[type];        // è¯å…¸è¡¨  'åŒä¹‰è¯' =&gt; 'æ&nbsp;‡å‡†è¯'
+  // å¯¼å…¥æ•°æ®
+  var data = fs.readFileSync(filename, 'utf8');
+
+  data.split(/\r?\n/).forEach(function (line) {
+    var blocks = line.split(',');
+    if (blocks.length &gt; 1) {
+      var n1 = blocks[0].trim();
+      var n2 = blocks[1].trim();
+      TABLE[n1] = n2;
+      if (TABLE[n2] === n1) {
+        delete TABLE[n2];
+      }
+    }
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.split" id="apidoc.element.segment.Segment.prototype.split">
+        function <span class="apidocSignatureSpan">segment.</span>Segment.prototype.split
+        <span class="apidocSignatureSpan">(words, s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Segment.prototype.split = function (words, s) {
+  var ret = [];
+  var lasti = 0;
+  var i = 0;
+  var f = typeof s === 'string' ? 'w' : 'p';
+
+  while (i &lt; words.length) {
+    if (words[i][f] == s) {
+      if (lasti &lt; i) ret.push(words.slice(lasti, i));
+      ret.push(words.slice(i, i + 1));
+      i++;
+      lasti = i;
+    } else {
+      i++;
+    }
+  }
+  if (lasti &lt; words.length - 1) {
+    ret.push(words.slice(lasti, words.length));
+  }
+
+  return ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.toString" id="apidoc.element.segment.Segment.prototype.toString">
+        function <span class="apidocSignatureSpan">segment.</span>Segment.prototype.toString
+        <span class="apidocSignatureSpan">(words)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Segment.prototype.toString = function (words) {
+  return words.map(function (item) {
+    return item.w;
+  }).join('');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.use" id="apidoc.element.segment.Segment.prototype.use">
+        function <span class="apidocSignatureSpan">segment.</span>Segment.prototype.use
+        <span class="apidocSignatureSpan">(module)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Segment.prototype.use = function (module) {
+  var me = this;
+
+  if (Array.isArray(module)) {
+    module.forEach(function (module) {
+      me.use(module[i]);
+    });
+
+  } else {
+    if (typeof module == 'string') {
+      var filename = path.resolve(__dirname, 'module', module + '.js');
+      if (!fs.existsSync(filename)) {
+        throw Error('Cannot find module "' + module + '".');
+      } else {
+        module = require(filename);
+      }
+    }
+    // åˆå§‹åŒ–å¹¶æ³¨å†Œæ¨¡å—
+    module.init(this);
+    this.modules[module.type].push(module);
+  }
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.useDefault" id="apidoc.element.segment.Segment.prototype.useDefault">
+        function <span class="apidocSignatureSpan">segment.</span>Segment.prototype.useDefault
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Segment.prototype.useDefault = function () {
+  this
+    // è¯†åˆ«æ¨¡å—
+    // å¼ºåˆ¶åˆ†å‰²ç±»å•è¯è¯†åˆ«
+    .use('URLTokenizer')            // URLè¯†åˆ«
+    .use('WildcardTokenizer')       // é€šé…ç¬¦ï¼Œå¿…é¡»åœ¨æ&nbsp;‡ç‚¹ç¬¦å·è¯†åˆ«ä¹‹å‰
+    .use('PunctuationTokenizer')    // æ&nbsp;‡ç‚¹ç¬¦å·è¯†åˆ«
+    .use('ForeignTokenizer')        // å¤–æ–‡å­—ç¬¦ã€æ•°å­—è¯†åˆ«ï¼Œå¿…é¡»åœ¨æ&nbsp;‡ç‚¹ç¬¦å·è¯†åˆ«ä¹‹åŽ
+    // ä¸­æ–‡å•è¯è¯†åˆ«
+    .use('DictTokenizer')           // è¯å…¸è¯†åˆ«
+    .use('ChsNameTokenizer')        // äººåè¯†åˆ«ï¼Œå»ºè®®åœ¨è¯å…¸è¯†åˆ«ä¹‹åŽ
+
+    // ä¼˜åŒ–æ¨¡å—
+    .use('EmailOptimizer')          // é‚®ç®±åœ°å€è¯†åˆ«
+    .use('ChsNameOptimizer')        // äººåè¯†åˆ«ä¼˜åŒ–
+    .use('DictOptimizer')           // è¯å…¸è¯†åˆ«ä¼˜åŒ–
+    .use('DatetimeOptimizer')       // æ—¥æœŸæ—¶é—´è¯†åˆ«ä¼˜åŒ–
+
+    // å­—å…¸æ–‡ä»¶
+    .loadDict('dict.txt')           // ç›˜å¤è¯å…¸
+    .loadDict('dict2.txt')          // æ‰©å±•è¯å…¸ï¼ˆç”¨äºŽè°ƒæ•´åŽŸç›˜å¤è¯å…¸ï¼‰
+    .loadDict('dict3.txt')          // æ‰©å±•è¯å…¸ï¼ˆç”¨äºŽè°ƒæ•´åŽŸç›˜å¤è¯å…¸ï¼‰
+    .loadDict('names.txt')          // å¸¸è§åè¯ã€äººå
+    .loadDict('wildcard.txt', 'WILDCARD', true)   // é€šé…ç¬¦
+    .loadSynonymDict('synonym.txt')   // åŒä¹‰è¯
+    .loadStopwordDict('stopword.txt') // åœæ­¢ç¬¦
+  ;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Tokenizer" id="apidoc.element.segment.Tokenizer">
+        function <span class="apidocSignatureSpan">segment.</span>Tokenizer
+        <span class="apidocSignatureSpan">(segment)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Tokenizer = function (segment) {
+  this.segment = segment;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.segment.toString" id="apidoc.element.segment.toString">
+        function <span class="apidocSignatureSpan">segment.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  line += ret[i].w + '/';
+  ret[i].ps = POSTAG.chsName(ret[i].p);
+}
+console.log(ret);
+console.log(line);
+console.log('spent ' + ((e - s) / NUM) + 'ms');
+return;
+console.log(segment.<span class="apidocCodeKeywordSpan">toString</span>(ret));
+var split = segment.split(ret, 'æ˜¯');
+for (var i in split)
+  console.log(segment.toString(split[i]));
+console.log(segment.indexOf(ret, 'çš„', 3));
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.segment.Optimizer" id="apidoc.module.segment.Optimizer">module segment.Optimizer</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Optimizer.Optimizer" id="apidoc.element.segment.Optimizer.Optimizer">
+        function <span class="apidocSignatureSpan">segment.</span>Optimizer
+        <span class="apidocSignatureSpan">(segment)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Optimizer = function (segment) {
+  this.segment = segment;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.segment.Optimizer.prototype" id="apidoc.module.segment.Optimizer.prototype">module segment.Optimizer.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Optimizer.prototype.doOptimize" id="apidoc.element.segment.Optimizer.prototype.doOptimize">
+        function <span class="apidocSignatureSpan">segment.Optimizer.prototype.</span>doOptimize
+        <span class="apidocSignatureSpan">(words, modules)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">doOptimize = function (words, modules) {
+  // æŒ‰é¡ºåºåˆ†åˆ«è°ƒç”¨å„ä¸ªmoduleæ¥è¿›è¡Œåˆ†è¯ ï¼š å„ä¸ªmoduleä»…å¯¹æ²¡æœ‰è¯†åˆ«ç±»åž‹çš„å•è¯è¿›è¡Œåˆ†è¯
+  modules.forEach(function (module) {
+    words = module.doOptimize(words);
+  });
+  return words;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @param {array} words å•è¯æ•°ç»„
+ * @param {array} modules åˆ†è¯æ¨¡å—æ•°ç»„
+ * @return {array}
+ */
+Optimizer.prototype.doOptimize = function (words, modules) {
+  // æŒ‰é¡ºåºåˆ†åˆ«è°ƒç”¨å„ä¸ªmoduleæ¥è¿›è¡Œåˆ†è¯ ï¼š å„ä¸ªmoduleä»…å¯¹æ²¡æœ‰è¯†åˆ«ç±»åž‹çš„å•è¯è¿›è¡Œåˆ†è¯
+  modules.forEach(function (module) {
+    words = module.<span class="apidocCodeKeywordSpan">doOptimize</span>(words);
+  });
+  return words;
+};
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.segment.POSTAG" id="apidoc.module.segment.POSTAG">module segment.POSTAG</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.segment.POSTAG.chsName" id="apidoc.element.segment.POSTAG.chsName">
+        function <span class="apidocSignatureSpan">segment.POSTAG.</span>chsName
+        <span class="apidocSignatureSpan">(p)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">chsName = function (p) {
+  if (isNaN(p)) {
+    return CHSNAME[p] || CHSNAME.UNK;
+  } else {
+    var ret = [];
+    for (var i in _POSTAG) {
+      if ((p &amp; _POSTAG[i]) &gt; 0) {
+        ret.push(CHSNAME[i]);
+      }
+    }
+    if (ret.length &lt; 1) {
+      return CHSNAME.UNK;
+    } else {
+      return ret.toString();
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  var ret = segment.doSegment(text);
+
+////////////////////////////////////////////////////////////
+var e = new Date().getTime();
+var line = '';
+for (var i in ret) {
+  line += ret[i].w + '/';
+  ret[i].ps = POSTAG.<span class="apidocCodeKeywordSpan">chsName</span>(ret[i].p);
+}
+console.log(ret);
+console.log(line);
+console.log('spent ' + ((e - s) / NUM) + 'ms');
+return;
+console.log(segment.toString(ret));
+var split = segment.split(ret, 'æ˜¯');
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.segment.POSTAG.chsName" id="apidoc.module.segment.POSTAG.chsName">module segment.POSTAG.chsName</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.segment.POSTAG.chsName.chsName" id="apidoc.element.segment.POSTAG.chsName.chsName">
+        function <span class="apidocSignatureSpan">segment.POSTAG.</span>chsName
+        <span class="apidocSignatureSpan">(p)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">chsName = function (p) {
+  if (isNaN(p)) {
+    return CHSNAME[p] || CHSNAME.UNK;
+  } else {
+    var ret = [];
+    for (var i in _POSTAG) {
+      if ((p &amp; _POSTAG[i]) &gt; 0) {
+        ret.push(CHSNAME[i]);
+      }
+    }
+    if (ret.length &lt; 1) {
+      return CHSNAME.UNK;
+    } else {
+      return ret.toString();
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  var ret = segment.doSegment(text);
+
+////////////////////////////////////////////////////////////
+var e = new Date().getTime();
+var line = '';
+for (var i in ret) {
+  line += ret[i].w + '/';
+  ret[i].ps = POSTAG.<span class="apidocCodeKeywordSpan">chsName</span>(ret[i].p);
+}
+console.log(ret);
+console.log(line);
+console.log('spent ' + ((e - s) / NUM) + 'ms');
+return;
+console.log(segment.toString(ret));
+var split = segment.split(ret, 'æ˜¯');
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.segment.Segment" id="apidoc.module.segment.Segment">module segment.Segment</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.Segment" id="apidoc.element.segment.Segment.Segment">
+        function <span class="apidocSignatureSpan">segment.</span>Segment
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Segment = function () {
+  this.POSTAG = POSTAG; // è¯æ€§
+  this.DICT = {};       // è¯å…¸è¡¨
+  this.modules = {
+    tokenizer:  [],     // åˆ†è¯æ¨¡å—
+    optimizer:  []      // ä¼˜åŒ–æ¨¡å—
+  };
+  this.tokenizer = new Tokenizer(this);
+  this.optimizer = new Optimizer(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.segment.Segment.prototype" id="apidoc.module.segment.Segment.prototype">module segment.Segment.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype._resolveDictFilename" id="apidoc.element.segment.Segment.prototype._resolveDictFilename">
+        function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>_resolveDictFilename
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_resolveDictFilename = function (name) {
+  var filename = path.resolve(name);
+  if (!fs.existsSync(filename)) {
+    var filename = path.resolve(__dirname, '../dicts', name);
+    if (!fs.existsSync(filename)) {
+      throw Error('Cannot find dict file "' + filename + '".');
+    }
+  }
+  return filename;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.doSegment" id="apidoc.element.segment.Segment.prototype.doSegment">
+        function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>doSegment
+        <span class="apidocSignatureSpan">(text, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">doSegment = function (text, options) {
+  var me = this;
+  options = options || {};
+  var ret = [];
+
+  // å°†æ–‡æœ¬æŒ‰ç…§æ¢è¡Œç¬¦åˆ†å‰²æˆå¤šæ®µï¼Œå¹¶é€ä¸€åˆ†è¯
+  text.replace(/\r/g, '\n').split(/(\n|\s)+/).forEach(function (section) {
+    var section = section.trim();
+    if (section.length &lt; 1) return;
+    // ======================================
+    // åˆ†è¯
+    var sret = me.tokenizer.split(section, me.modules.tokenizer);
+
+    // ä¼˜åŒ–
+    sret = me.optimizer.doOptimize(sret, me.modules.optimizer);
+
+    // ======================================
+    // è¿žæŽ¥åˆ†è¯ç»“æžœ
+    if (sret.length &gt; 0) ret = ret.concat(sret);
+  });
+
+  // åŽ»é™¤æ&nbsp;‡ç‚¹ç¬¦å·
+  if (options.stripPunctuation) {
+    ret = ret.filter(function (item) {
+      return item.p !== POSTAG.D_W;
+    });
+  }
+
+  // è½¬æ¢åŒä¹‰è¯
+  function convertSynonym (list) {
+    var count = 0;
+    var TABLE = me.getDict('SYNONYM');
+    list = list.map(function (item) {
+      if (item.w in TABLE) {
+        count++;
+        return {w: TABLE[item.w], p: item.p};
+      } else {
+        return item;
+      }
+    });
+    return {count: count, list: list};
+  }
+  if (options.convertSynonym) {
+    do {
+      var result = convertSynonym(ret);
+      ret = result.list;
+    } while (result.count &gt; 0);
+  }
+
+  // åŽ»é™¤åœæ­¢ç¬¦
+  if (options.stripStopword) {
+    var STOPWORD = me.getDict('STOPWORD');
+    ret = ret.filter(function (item) {
+      return !(item.w in STOPWORD);
+    });
+  }
+
+  // ä»…è¿”å›žå•è¯å†…å®¹
+  if (options.simple) {
+    ret = ret.map(function (item) {
+      return item.w;
+    });
+  }
+
+  return ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var Segment = require('segment');
+// åˆ›å»ºå®žä¾‹
+var segment = new Segment();
+// ä½¿ç”¨é»˜è®¤çš„è¯†åˆ«æ¨¡å—åŠå­—å…¸ï¼Œè½½å…¥å­—å…¸æ–‡ä»¶éœ€è¦1ç§’ï¼Œä»…åˆå§‹åŒ–æ—¶æ‰§è¡Œä¸€æ¬¡å³å¯
+segment.useDefault();
+
+// å¼€å§‹åˆ†è¯
+console.log(segment.<span class="apidocCodeKeywordSpan">doSegment</span>('è¿™æ˜¯ä¸€ä¸ªåŸºäºŽNode.jsçš„ä¸­æ–‡åˆ†è¯æ¨¡å—ã€‚'));
+```
+
+è¿”å›žç»“æžœæ&nbsp;¼å¼ï¼š
+
+```javascript
+[ { w: 'è¿™æ˜¯', p: 0 },
+{ w: 'ä¸€ä¸ª', p: 2097152 },
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.getDict" id="apidoc.element.segment.Segment.prototype.getDict">
+        function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>getDict
+        <span class="apidocSignatureSpan">(type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getDict = function (type) {
+  return this.DICT[type];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.indexOf" id="apidoc.element.segment.Segment.prototype.indexOf">
+        function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>indexOf
+        <span class="apidocSignatureSpan">(words, s, cur)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">indexOf = function (words, s, cur) {
+  cur = isNaN(cur) ? 0 : cur;
+  var f = typeof s === 'string' ? 'w' : 'p';
+
+  while (cur &lt; words.length) {
+    if (words[cur][f] == s) return cur;
+    cur++;
+  }
+
+  return -1;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+console.log(line);
+console.log('spent ' + ((e - s) / NUM) + 'ms');
+return;
+console.log(segment.toString(ret));
+var split = segment.split(ret, 'æ˜¯');
+for (var i in split)
+  console.log(segment.toString(split[i]));
+console.log(segment.<span class="apidocCodeKeywordSpan">indexOf</span>(ret, 'çš„', 3));
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.loadDict" id="apidoc.element.segment.Segment.prototype.loadDict">
+        function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>loadDict
+        <span class="apidocSignatureSpan">(name, type, convert_to_lower)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loadDict = function (name, type, convert_to_lower) {
+  var filename = this._resolveDictFilename(name);
+  if (!type)  type = 'TABLE';     // é»˜è®¤ä¸ºTABLE
+
+  // åˆå§‹åŒ–è¯å…¸
+  if (!this.DICT[type]) this.DICT[type] = {};
+  if (!this.DICT[type + '2']) this.DICT[type + '2'] = {};
+  var TABLE = this.DICT[type];        // è¯å…¸è¡¨  'è¯' =&gt; {å±žæ€§}
+  var TABLE2 = this.DICT[type + '2']; // è¯å…¸è¡¨  'é•¿åº¦' =&gt; 'è¯' =&gt; å±žæ€§
+  // å¯¼å…¥æ•°æ®
+  var POSTAG = this.POSTAG;
+  var data = fs.readFileSync(filename, 'utf8');
+  if (convert_to_lower) data = data.toLowerCase();
+
+  data.split(/\r?\n/).forEach(function (line) {
+    var blocks = line.split('|');
+    if (blocks.length &gt; 2) {
+      var w = blocks[0].trim();
+      var p = Number(blocks[1]);
+      var f = Number(blocks[2]);
+
+      // ä¸€å®šè¦æ£€æŸ¥å•è¯æ˜¯å¦ä¸ºç©ºï¼Œå¦‚æžœä¸ºç©ºä¼šå¯¼è‡´Bug
+      if (w.length &gt; 0) {
+        TABLE[w] = {f: f, p: p};
+        if (!TABLE2[w.length]) TABLE2[w.length] = {};
+        TABLE2[w.length][w] = TABLE[w];
+      }
+    }
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+// è½½å…¥æ¨¡å—
+var Segment = require('segment');
+// åˆ›å»ºå®žä¾‹
+var segment = new Segment();
+// é…ç½®ï¼Œå¯æ&nbsp;¹æ®å®žé™…æƒ…å†µå¢žåˆ&nbsp;ï¼Œè¯¦è§segment.useDefault()æ–¹æ³•
+segment.use('URLTokenizer');  // è½½å…¥è¯†åˆ«æ¨¡å—ï¼Œè¯¦è§lib/moduleç›®å½•ï¼Œæˆ–è€…æ˜¯è‡ªå®šä¹‰æ¨¡å—çš„ç»å¯¹è·¯å¾„
+segment.<span class="apidocCodeKeywordSpan">loadDict</span>('dict.txt'); // è½½å…¥å­—å…¸ï¼Œè¯¦è§dictsç›®å½•ï¼Œæˆ–è€…æ˜¯è‡ªå®šä¹‰å­—å…¸æ–‡ä»¶çš„ç»å¯¹è·¯å¾„
+
+// å¼€å§‹åˆ†è¯
+console.log(segment.doSegment('è¿™æ˜¯ä¸€ä¸ªåŸºäºŽNode.jsçš„ä¸­æ–‡åˆ†è¯æ¨¡å—ã€‚'));
+```
+
+ä¸€èˆ¬å¯é€šè¿‡ `segment.useDefault()` æ¥è½½å…¥é»˜è®¤çš„é…ç½®ï¼Œè‹¥è¦è‡ªå®šä¹‰åŠ&nbsp;è½½ï¼Œå¯å‚è€ƒ `useDefault()` çš„ä»£ç&nbsp;ï¼š
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.loadStopwordDict" id="apidoc.element.segment.Segment.prototype.loadStopwordDict">
+        function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>loadStopwordDict
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loadStopwordDict = function (name) {
+  var filename = this._resolveDictFilename(name);
+  var type = 'STOPWORD';
+
+  // åˆå§‹åŒ–è¯å…¸
+  if (!this.DICT[type]) this.DICT[type] = {};
+  var TABLE = this.DICT[type];        // è¯å…¸è¡¨  'åŒä¹‰è¯' =&gt; 'æ&nbsp;‡å‡†è¯'
+  // å¯¼å…¥æ•°æ®
+  var data = fs.readFileSync(filename, 'utf8');
+
+  data.split(/\r?\n/).forEach(function (line) {
+    line = line.trim();
+    if (line) {
+      TABLE[line] = true;
+    }
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+### åŽ»é™¤åœæ­¢ç¬¦
+
+è½½å…¥è¯å…¸ï¼š
+
+```javascript
+segment.<span class="apidocCodeKeywordSpan">loadStopwordDict</span>('stopword.txt');
+```
+
+è¯å…¸æ&nbsp;¼å¼ï¼š
+
+```
+ä¹‹æ‰€ä»¥
+å›&nbsp;ä¸º
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.loadSynonymDict" id="apidoc.element.segment.Segment.prototype.loadSynonymDict">
+        function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>loadSynonymDict
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loadSynonymDict = function (name) {
+  var filename = this._resolveDictFilename(name);
+  var type = 'SYNONYM';
+
+  // åˆå§‹åŒ–è¯å…¸
+  if (!this.DICT[type]) this.DICT[type] = {};
+  var TABLE = this.DICT[type];        // è¯å…¸è¡¨  'åŒä¹‰è¯' =&gt; 'æ&nbsp;‡å‡†è¯'
+  // å¯¼å…¥æ•°æ®
+  var data = fs.readFileSync(filename, 'utf8');
+
+  data.split(/\r?\n/).forEach(function (line) {
+    var blocks = line.split(',');
+    if (blocks.length &gt; 1) {
+      var n1 = blocks[0].trim();
+      var n2 = blocks[1].trim();
+      TABLE[n1] = n2;
+      if (TABLE[n2] === n1) {
+        delete TABLE[n2];
+      }
+    }
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+### è½¬æ¢åŒä¹‰è¯
+
+è½½å…¥åŒä¹‰è¯è¯å…¸ï¼š
+
+```javascript
+segment.<span class="apidocCodeKeywordSpan">loadSynonymDict</span>('synonym.txt');
+```
+
+è¯å…¸æ&nbsp;¼å¼ï¼š
+
+```
+ä»€ä¹ˆæ—¶å€™,ä½•æ—¶
+å…¥çœ&nbsp;,å…¥ç¡
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.split" id="apidoc.element.segment.Segment.prototype.split">
+        function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>split
+        <span class="apidocSignatureSpan">(words, s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">split = function (words, s) {
+  var ret = [];
+  var lasti = 0;
+  var i = 0;
+  var f = typeof s === 'string' ? 'w' : 'p';
+
+  while (i &lt; words.length) {
+    if (words[i][f] == s) {
+      if (lasti &lt; i) ret.push(words.slice(lasti, i));
+      ret.push(words.slice(i, i + 1));
+      i++;
+      lasti = i;
+    } else {
+      i++;
+    }
+  }
+  if (lasti &lt; words.length - 1) {
+    ret.push(words.slice(lasti, words.length));
+  }
+
+  return ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  ret[i].ps = POSTAG.chsName(ret[i].p);
+}
+console.log(ret);
+console.log(line);
+console.log('spent ' + ((e - s) / NUM) + 'ms');
+return;
+console.log(segment.toString(ret));
+var split = segment.<span class="apidocCodeKeywordSpan">split</span>(ret, 'æ˜¯');
+for (var i in split)
+  console.log(segment.toString(split[i]));
+console.log(segment.indexOf(ret, 'çš„', 3));
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.toString" id="apidoc.element.segment.Segment.prototype.toString">
+        function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>toString
+        <span class="apidocSignatureSpan">(words)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function (words) {
+  return words.map(function (item) {
+    return item.w;
+  }).join('');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  line += ret[i].w + '/';
+  ret[i].ps = POSTAG.chsName(ret[i].p);
+}
+console.log(ret);
+console.log(line);
+console.log('spent ' + ((e - s) / NUM) + 'ms');
+return;
+console.log(segment.<span class="apidocCodeKeywordSpan">toString</span>(ret));
+var split = segment.split(ret, 'æ˜¯');
+for (var i in split)
+  console.log(segment.toString(split[i]));
+console.log(segment.indexOf(ret, 'çš„', 3));
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.use" id="apidoc.element.segment.Segment.prototype.use">
+        function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>use
+        <span class="apidocSignatureSpan">(module)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">use = function (module) {
+  var me = this;
+
+  if (Array.isArray(module)) {
+    module.forEach(function (module) {
+      me.use(module[i]);
+    });
+
+  } else {
+    if (typeof module == 'string') {
+      var filename = path.resolve(__dirname, 'module', module + '.js');
+      if (!fs.existsSync(filename)) {
+        throw Error('Cannot find module "' + module + '".');
+      } else {
+        module = require(filename);
+      }
+    }
+    // åˆå§‹åŒ–å¹¶æ³¨å†Œæ¨¡å—
+    module.init(this);
+    this.modules[module.type].push(module);
+  }
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```javascript
+// è½½å…¥æ¨¡å—
+var Segment = require('segment');
+// åˆ›å»ºå®žä¾‹
+var segment = new Segment();
+// é…ç½®ï¼Œå¯æ&nbsp;¹æ®å®žé™…æƒ…å†µå¢žåˆ&nbsp;ï¼Œè¯¦è§segment.useDefault()æ–¹æ³•
+segment.<span class="apidocCodeKeywordSpan">use</span>('URLTokenizer');  // è½½å…¥è¯†åˆ«æ¨¡å—ï¼Œè¯¦è§lib/moduleç›®å½•ï¼Œæˆ–è€…æ˜¯è‡ªå®šä¹‰æ¨¡å—çš„ç»å¯¹è·¯å¾„
+segment.loadDict('dict.txt'); // è½½å…¥å­—å…¸ï¼Œè¯¦è§dictsç›®å½•ï¼Œæˆ–è€…æ˜¯è‡ªå®šä¹‰å­—å…¸æ–‡ä»¶çš„ç»å¯¹è·¯å¾„
+
+// å¼€å§‹åˆ†è¯
+console.log(segment.doSegment('è¿™æ˜¯ä¸€ä¸ªåŸºäºŽNode.jsçš„ä¸­æ–‡åˆ†è¯æ¨¡å—ã€‚'));
+```
+
+ä¸€èˆ¬å¯é€šè¿‡ `segment.useDefault()` æ¥è½½å…¥é»˜è®¤çš„é…ç½®ï¼Œè‹¥è¦è‡ªå®šä¹‰åŠ&nbsp;è½½ï¼Œå¯å‚è€ƒ `useDefault()` çš„ä»£ç&nbsp;ï¼š
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.useDefault" id="apidoc.element.segment.Segment.prototype.useDefault">
+        function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>useDefault
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">useDefault = function () {
+  this
+    // è¯†åˆ«æ¨¡å—
+    // å¼ºåˆ¶åˆ†å‰²ç±»å•è¯è¯†åˆ«
+    .use('URLTokenizer')            // URLè¯†åˆ«
+    .use('WildcardTokenizer')       // é€šé…ç¬¦ï¼Œå¿…é¡»åœ¨æ&nbsp;‡ç‚¹ç¬¦å·è¯†åˆ«ä¹‹å‰
+    .use('PunctuationTokenizer')    // æ&nbsp;‡ç‚¹ç¬¦å·è¯†åˆ«
+    .use('ForeignTokenizer')        // å¤–æ–‡å­—ç¬¦ã€æ•°å­—è¯†åˆ«ï¼Œå¿…é¡»åœ¨æ&nbsp;‡ç‚¹ç¬¦å·è¯†åˆ«ä¹‹åŽ
+    // ä¸­æ–‡å•è¯è¯†åˆ«
+    .use('DictTokenizer')           // è¯å…¸è¯†åˆ«
+    .use('ChsNameTokenizer')        // äººåè¯†åˆ«ï¼Œå»ºè®®åœ¨è¯å…¸è¯†åˆ«ä¹‹åŽ
+
+    // ä¼˜åŒ–æ¨¡å—
+    .use('EmailOptimizer')          // é‚®ç®±åœ°å€è¯†åˆ«
+    .use('ChsNameOptimizer')        // äººåè¯†åˆ«ä¼˜åŒ–
+    .use('DictOptimizer')           // è¯å…¸è¯†åˆ«ä¼˜åŒ–
+    .use('DatetimeOptimizer')       // æ—¥æœŸæ—¶é—´è¯†åˆ«ä¼˜åŒ–
+
+    // å­—å…¸æ–‡ä»¶
+    .loadDict('dict.txt')           // ç›˜å¤è¯å…¸
+    .loadDict('dict2.txt')          // æ‰©å±•è¯å…¸ï¼ˆç”¨äºŽè°ƒæ•´åŽŸç›˜å¤è¯å…¸ï¼‰
+    .loadDict('dict3.txt')          // æ‰©å±•è¯å…¸ï¼ˆç”¨äºŽè°ƒæ•´åŽŸç›˜å¤è¯å…¸ï¼‰
+    .loadDict('names.txt')          // å¸¸è§åè¯ã€äººå
+    .loadDict('wildcard.txt', 'WILDCARD', true)   // é€šé…ç¬¦
+    .loadSynonymDict('synonym.txt')   // åŒä¹‰è¯
+    .loadStopwordDict('stopword.txt') // åœæ­¢ç¬¦
+  ;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```javascript
+// è½½å…¥æ¨¡å—
+var Segment = require('segment');
+// åˆ›å»ºå®žä¾‹
+var segment = new Segment();
+// ä½¿ç”¨é»˜è®¤çš„è¯†åˆ«æ¨¡å—åŠå­—å…¸ï¼Œè½½å…¥å­—å…¸æ–‡ä»¶éœ€è¦1ç§’ï¼Œä»…åˆå§‹åŒ–æ—¶æ‰§è¡Œä¸€æ¬¡å³å¯
+segment.<span class="apidocCodeKeywordSpan">useDefault</span>();
+
+// å¼€å§‹åˆ†è¯
+console.log(segment.doSegment('è¿™æ˜¯ä¸€ä¸ªåŸºäºŽNode.jsçš„ä¸­æ–‡åˆ†è¯æ¨¡å—ã€‚'));
+```
+
+è¿”å›žç»“æžœæ&nbsp;¼å¼ï¼š
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.segment.Segment.prototype._resolveDictFilename" id="apidoc.module.segment.Segment.prototype._resolveDictFilename">module segment.Segment.prototype._resolveDictFilename</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype._resolveDictFilename._resolveDictFilename" id="apidoc.element.segment.Segment.prototype._resolveDictFilename._resolveDictFilename">
+        function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>_resolveDictFilename
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_resolveDictFilename = function (name) {
+  var filename = path.resolve(name);
+  if (!fs.existsSync(filename)) {
+    var filename = path.resolve(__dirname, '../dicts', name);
+    if (!fs.existsSync(filename)) {
+      throw Error('Cannot find dict file "' + filename + '".');
+    }
+  }
+  return filename;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.segment.Segment.prototype.doSegment" id="apidoc.module.segment.Segment.prototype.doSegment">module segment.Segment.prototype.doSegment</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.doSegment.doSegment" id="apidoc.element.segment.Segment.prototype.doSegment.doSegment">
+        function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>doSegment
+        <span class="apidocSignatureSpan">(text, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">doSegment = function (text, options) {
+  var me = this;
+  options = options || {};
+  var ret = [];
+
+  // å°†æ–‡æœ¬æŒ‰ç…§æ¢è¡Œç¬¦åˆ†å‰²æˆå¤šæ®µï¼Œå¹¶é€ä¸€åˆ†è¯
+  text.replace(/\r/g, '\n').split(/(\n|\s)+/).forEach(function (section) {
+    var section = section.trim();
+    if (section.length &lt; 1) return;
+    // ======================================
+    // åˆ†è¯
+    var sret = me.tokenizer.split(section, me.modules.tokenizer);
+
+    // ä¼˜åŒ–
+    sret = me.optimizer.doOptimize(sret, me.modules.optimizer);
+
+    // ======================================
+    // è¿žæŽ¥åˆ†è¯ç»“æžœ
+    if (sret.length &gt; 0) ret = ret.concat(sret);
+  });
+
+  // åŽ»é™¤æ&nbsp;‡ç‚¹ç¬¦å·
+  if (options.stripPunctuation) {
+    ret = ret.filter(function (item) {
+      return item.p !== POSTAG.D_W;
+    });
+  }
+
+  // è½¬æ¢åŒä¹‰è¯
+  function convertSynonym (list) {
+    var count = 0;
+    var TABLE = me.getDict('SYNONYM');
+    list = list.map(function (item) {
+      if (item.w in TABLE) {
+        count++;
+        return {w: TABLE[item.w], p: item.p};
+      } else {
+        return item;
+      }
+    });
+    return {count: count, list: list};
+  }
+  if (options.convertSynonym) {
+    do {
+      var result = convertSynonym(ret);
+      ret = result.list;
+    } while (result.count &gt; 0);
+  }
+
+  // åŽ»é™¤åœæ­¢ç¬¦
+  if (options.stripStopword) {
+    var STOPWORD = me.getDict('STOPWORD');
+    ret = ret.filter(function (item) {
+      return !(item.w in STOPWORD);
+    });
+  }
+
+  // ä»…è¿”å›žå•è¯å†…å®¹
+  if (options.simple) {
+    ret = ret.map(function (item) {
+      return item.w;
+    });
+  }
+
+  return ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var Segment = require('segment');
+// åˆ›å»ºå®žä¾‹
+var segment = new Segment();
+// ä½¿ç”¨é»˜è®¤çš„è¯†åˆ«æ¨¡å—åŠå­—å…¸ï¼Œè½½å…¥å­—å…¸æ–‡ä»¶éœ€è¦1ç§’ï¼Œä»…åˆå§‹åŒ–æ—¶æ‰§è¡Œä¸€æ¬¡å³å¯
+segment.useDefault();
+
+// å¼€å§‹åˆ†è¯
+console.log(segment.<span class="apidocCodeKeywordSpan">doSegment</span>('è¿™æ˜¯ä¸€ä¸ªåŸºäºŽNode.jsçš„ä¸­æ–‡åˆ†è¯æ¨¡å—ã€‚'));
+```
+
+è¿”å›žç»“æžœæ&nbsp;¼å¼ï¼š
+
+```javascript
+[ { w: 'è¿™æ˜¯', p: 0 },
+{ w: 'ä¸€ä¸ª', p: 2097152 },
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.segment.Segment.prototype.getDict" id="apidoc.module.segment.Segment.prototype.getDict">module segment.Segment.prototype.getDict</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.getDict.getDict" id="apidoc.element.segment.Segment.prototype.getDict.getDict">
+        function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>getDict
+        <span class="apidocSignatureSpan">(type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getDict = function (type) {
+  return this.DICT[type];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.segment.Segment.prototype.indexOf" id="apidoc.module.segment.Segment.prototype.indexOf">module segment.Segment.prototype.indexOf</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.indexOf.indexOf" id="apidoc.element.segment.Segment.prototype.indexOf.indexOf">
+        function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>indexOf
+        <span class="apidocSignatureSpan">(words, s, cur)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">indexOf = function (words, s, cur) {
+  cur = isNaN(cur) ? 0 : cur;
+  var f = typeof s === 'string' ? 'w' : 'p';
+
+  while (cur &lt; words.length) {
+    if (words[cur][f] == s) return cur;
+    cur++;
+  }
+
+  return -1;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+console.log(line);
+console.log('spent ' + ((e - s) / NUM) + 'ms');
+return;
+console.log(segment.toString(ret));
+var split = segment.split(ret, 'æ˜¯');
+for (var i in split)
+  console.log(segment.toString(split[i]));
+console.log(segment.<span class="apidocCodeKeywordSpan">indexOf</span>(ret, 'çš„', 3));
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.segment.Segment.prototype.loadDict" id="apidoc.module.segment.Segment.prototype.loadDict">module segment.Segment.prototype.loadDict</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.loadDict.loadDict" id="apidoc.element.segment.Segment.prototype.loadDict.loadDict">
+        function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>loadDict
+        <span class="apidocSignatureSpan">(name, type, convert_to_lower)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loadDict = function (name, type, convert_to_lower) {
+  var filename = this._resolveDictFilename(name);
+  if (!type)  type = 'TABLE';     // é»˜è®¤ä¸ºTABLE
+
+  // åˆå§‹åŒ–è¯å…¸
+  if (!this.DICT[type]) this.DICT[type] = {};
+  if (!this.DICT[type + '2']) this.DICT[type + '2'] = {};
+  var TABLE = this.DICT[type];        // è¯å…¸è¡¨  'è¯' =&gt; {å±žæ€§}
+  var TABLE2 = this.DICT[type + '2']; // è¯å…¸è¡¨  'é•¿åº¦' =&gt; 'è¯' =&gt; å±žæ€§
+  // å¯¼å…¥æ•°æ®
+  var POSTAG = this.POSTAG;
+  var data = fs.readFileSync(filename, 'utf8');
+  if (convert_to_lower) data = data.toLowerCase();
+
+  data.split(/\r?\n/).forEach(function (line) {
+    var blocks = line.split('|');
+    if (blocks.length &gt; 2) {
+      var w = blocks[0].trim();
+      var p = Number(blocks[1]);
+      var f = Number(blocks[2]);
+
+      // ä¸€å®šè¦æ£€æŸ¥å•è¯æ˜¯å¦ä¸ºç©ºï¼Œå¦‚æžœä¸ºç©ºä¼šå¯¼è‡´Bug
+      if (w.length &gt; 0) {
+        TABLE[w] = {f: f, p: p};
+        if (!TABLE2[w.length]) TABLE2[w.length] = {};
+        TABLE2[w.length][w] = TABLE[w];
+      }
+    }
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+// è½½å…¥æ¨¡å—
+var Segment = require('segment');
+// åˆ›å»ºå®žä¾‹
+var segment = new Segment();
+// é…ç½®ï¼Œå¯æ&nbsp;¹æ®å®žé™…æƒ…å†µå¢žåˆ&nbsp;ï¼Œè¯¦è§segment.useDefault()æ–¹æ³•
+segment.use('URLTokenizer');  // è½½å…¥è¯†åˆ«æ¨¡å—ï¼Œè¯¦è§lib/moduleç›®å½•ï¼Œæˆ–è€…æ˜¯è‡ªå®šä¹‰æ¨¡å—çš„ç»å¯¹è·¯å¾„
+segment.<span class="apidocCodeKeywordSpan">loadDict</span>('dict.txt'); // è½½å…¥å­—å…¸ï¼Œè¯¦è§dictsç›®å½•ï¼Œæˆ–è€…æ˜¯è‡ªå®šä¹‰å­—å…¸æ–‡ä»¶çš„ç»å¯¹è·¯å¾„
+
+// å¼€å§‹åˆ†è¯
+console.log(segment.doSegment('è¿™æ˜¯ä¸€ä¸ªåŸºäºŽNode.jsçš„ä¸­æ–‡åˆ†è¯æ¨¡å—ã€‚'));
+```
+
+ä¸€èˆ¬å¯é€šè¿‡ `segment.useDefault()` æ¥è½½å…¥é»˜è®¤çš„é…ç½®ï¼Œè‹¥è¦è‡ªå®šä¹‰åŠ&nbsp;è½½ï¼Œå¯å‚è€ƒ `useDefault()` çš„ä»£ç&nbsp;ï¼š
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.segment.Segment.prototype.loadStopwordDict" id="apidoc.module.segment.Segment.prototype.loadStopwordDict">module segment.Segment.prototype.loadStopwordDict</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.loadStopwordDict.loadStopwordDict" id="apidoc.element.segment.Segment.prototype.loadStopwordDict.loadStopwordDict">
+        function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>loadStopwordDict
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loadStopwordDict = function (name) {
+  var filename = this._resolveDictFilename(name);
+  var type = 'STOPWORD';
+
+  // åˆå§‹åŒ–è¯å…¸
+  if (!this.DICT[type]) this.DICT[type] = {};
+  var TABLE = this.DICT[type];        // è¯å…¸è¡¨  'åŒä¹‰è¯' =&gt; 'æ&nbsp;‡å‡†è¯'
+  // å¯¼å…¥æ•°æ®
+  var data = fs.readFileSync(filename, 'utf8');
+
+  data.split(/\r?\n/).forEach(function (line) {
+    line = line.trim();
+    if (line) {
+      TABLE[line] = true;
+    }
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+### åŽ»é™¤åœæ­¢ç¬¦
+
+è½½å…¥è¯å…¸ï¼š
+
+```javascript
+segment.<span class="apidocCodeKeywordSpan">loadStopwordDict</span>('stopword.txt');
+```
+
+è¯å…¸æ&nbsp;¼å¼ï¼š
+
+```
+ä¹‹æ‰€ä»¥
+å›&nbsp;ä¸º
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.segment.Segment.prototype.loadSynonymDict" id="apidoc.module.segment.Segment.prototype.loadSynonymDict">module segment.Segment.prototype.loadSynonymDict</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.loadSynonymDict.loadSynonymDict" id="apidoc.element.segment.Segment.prototype.loadSynonymDict.loadSynonymDict">
+        function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>loadSynonymDict
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loadSynonymDict = function (name) {
+  var filename = this._resolveDictFilename(name);
+  var type = 'SYNONYM';
+
+  // åˆå§‹åŒ–è¯å…¸
+  if (!this.DICT[type]) this.DICT[type] = {};
+  var TABLE = this.DICT[type];        // è¯å…¸è¡¨  'åŒä¹‰è¯' =&gt; 'æ&nbsp;‡å‡†è¯'
+  // å¯¼å…¥æ•°æ®
+  var data = fs.readFileSync(filename, 'utf8');
+
+  data.split(/\r?\n/).forEach(function (line) {
+    var blocks = line.split(',');
+    if (blocks.length &gt; 1) {
+      var n1 = blocks[0].trim();
+      var n2 = blocks[1].trim();
+      TABLE[n1] = n2;
+      if (TABLE[n2] === n1) {
+        delete TABLE[n2];
+      }
+    }
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+### è½¬æ¢åŒä¹‰è¯
+
+è½½å…¥åŒä¹‰è¯è¯å…¸ï¼š
+
+```javascript
+segment.<span class="apidocCodeKeywordSpan">loadSynonymDict</span>('synonym.txt');
+```
+
+è¯å…¸æ&nbsp;¼å¼ï¼š
+
+```
+ä»€ä¹ˆæ—¶å€™,ä½•æ—¶
+å…¥çœ&nbsp;,å…¥ç¡
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.segment.Segment.prototype.split" id="apidoc.module.segment.Segment.prototype.split">module segment.Segment.prototype.split</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.split.split" id="apidoc.element.segment.Segment.prototype.split.split">
+        function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>split
+        <span class="apidocSignatureSpan">(words, s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">split = function (words, s) {
+  var ret = [];
+  var lasti = 0;
+  var i = 0;
+  var f = typeof s === 'string' ? 'w' : 'p';
+
+  while (i &lt; words.length) {
+    if (words[i][f] == s) {
+      if (lasti &lt; i) ret.push(words.slice(lasti, i));
+      ret.push(words.slice(i, i + 1));
+      i++;
+      lasti = i;
+    } else {
+      i++;
+    }
+  }
+  if (lasti &lt; words.length - 1) {
+    ret.push(words.slice(lasti, words.length));
+  }
+
+  return ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  ret[i].ps = POSTAG.chsName(ret[i].p);
+}
+console.log(ret);
+console.log(line);
+console.log('spent ' + ((e - s) / NUM) + 'ms');
+return;
+console.log(segment.toString(ret));
+var split = segment.<span class="apidocCodeKeywordSpan">split</span>(ret, 'æ˜¯');
+for (var i in split)
+  console.log(segment.toString(split[i]));
+console.log(segment.indexOf(ret, 'çš„', 3));
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.segment.Segment.prototype.toString" id="apidoc.module.segment.Segment.prototype.toString">module segment.Segment.prototype.toString</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.toString.toString" id="apidoc.element.segment.Segment.prototype.toString.toString">
+        function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  line += ret[i].w + '/';
+  ret[i].ps = POSTAG.chsName(ret[i].p);
+}
+console.log(ret);
+console.log(line);
+console.log('spent ' + ((e - s) / NUM) + 'ms');
+return;
+console.log(segment.<span class="apidocCodeKeywordSpan">toString</span>(ret));
+var split = segment.split(ret, 'æ˜¯');
+for (var i in split)
+  console.log(segment.toString(split[i]));
+console.log(segment.indexOf(ret, 'çš„', 3));
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.segment.Segment.prototype.use" id="apidoc.module.segment.Segment.prototype.use">module segment.Segment.prototype.use</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.use.use" id="apidoc.element.segment.Segment.prototype.use.use">
+        function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>use
+        <span class="apidocSignatureSpan">(module)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">use = function (module) {
+  var me = this;
+
+  if (Array.isArray(module)) {
+    module.forEach(function (module) {
+      me.use(module[i]);
+    });
+
+  } else {
+    if (typeof module == 'string') {
+      var filename = path.resolve(__dirname, 'module', module + '.js');
+      if (!fs.existsSync(filename)) {
+        throw Error('Cannot find module "' + module + '".');
+      } else {
+        module = require(filename);
+      }
+    }
+    // åˆå§‹åŒ–å¹¶æ³¨å†Œæ¨¡å—
+    module.init(this);
+    this.modules[module.type].push(module);
+  }
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```javascript
+// è½½å…¥æ¨¡å—
+var Segment = require('segment');
+// åˆ›å»ºå®žä¾‹
+var segment = new Segment();
+// é…ç½®ï¼Œå¯æ&nbsp;¹æ®å®žé™…æƒ…å†µå¢žåˆ&nbsp;ï¼Œè¯¦è§segment.useDefault()æ–¹æ³•
+segment.<span class="apidocCodeKeywordSpan">use</span>('URLTokenizer');  // è½½å…¥è¯†åˆ«æ¨¡å—ï¼Œè¯¦è§lib/moduleç›®å½•ï¼Œæˆ–è€…æ˜¯è‡ªå®šä¹‰æ¨¡å—çš„ç»å¯¹è·¯å¾„
+segment.loadDict('dict.txt'); // è½½å…¥å­—å…¸ï¼Œè¯¦è§dictsç›®å½•ï¼Œæˆ–è€…æ˜¯è‡ªå®šä¹‰å­—å…¸æ–‡ä»¶çš„ç»å¯¹è·¯å¾„
+
+// å¼€å§‹åˆ†è¯
+console.log(segment.doSegment('è¿™æ˜¯ä¸€ä¸ªåŸºäºŽNode.jsçš„ä¸­æ–‡åˆ†è¯æ¨¡å—ã€‚'));
+```
+
+ä¸€èˆ¬å¯é€šè¿‡ `segment.useDefault()` æ¥è½½å…¥é»˜è®¤çš„é…ç½®ï¼Œè‹¥è¦è‡ªå®šä¹‰åŠ&nbsp;è½½ï¼Œå¯å‚è€ƒ `useDefault()` çš„ä»£ç&nbsp;ï¼š
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.segment.Segment.prototype.useDefault" id="apidoc.module.segment.Segment.prototype.useDefault">module segment.Segment.prototype.useDefault</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Segment.prototype.useDefault.useDefault" id="apidoc.element.segment.Segment.prototype.useDefault.useDefault">
+        function <span class="apidocSignatureSpan">segment.Segment.prototype.</span>useDefault
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">useDefault = function () {
+  this
+    // è¯†åˆ«æ¨¡å—
+    // å¼ºåˆ¶åˆ†å‰²ç±»å•è¯è¯†åˆ«
+    .use('URLTokenizer')            // URLè¯†åˆ«
+    .use('WildcardTokenizer')       // é€šé…ç¬¦ï¼Œå¿…é¡»åœ¨æ&nbsp;‡ç‚¹ç¬¦å·è¯†åˆ«ä¹‹å‰
+    .use('PunctuationTokenizer')    // æ&nbsp;‡ç‚¹ç¬¦å·è¯†åˆ«
+    .use('ForeignTokenizer')        // å¤–æ–‡å­—ç¬¦ã€æ•°å­—è¯†åˆ«ï¼Œå¿…é¡»åœ¨æ&nbsp;‡ç‚¹ç¬¦å·è¯†åˆ«ä¹‹åŽ
+    // ä¸­æ–‡å•è¯è¯†åˆ«
+    .use('DictTokenizer')           // è¯å…¸è¯†åˆ«
+    .use('ChsNameTokenizer')        // äººåè¯†åˆ«ï¼Œå»ºè®®åœ¨è¯å…¸è¯†åˆ«ä¹‹åŽ
+
+    // ä¼˜åŒ–æ¨¡å—
+    .use('EmailOptimizer')          // é‚®ç®±åœ°å€è¯†åˆ«
+    .use('ChsNameOptimizer')        // äººåè¯†åˆ«ä¼˜åŒ–
+    .use('DictOptimizer')           // è¯å…¸è¯†åˆ«ä¼˜åŒ–
+    .use('DatetimeOptimizer')       // æ—¥æœŸæ—¶é—´è¯†åˆ«ä¼˜åŒ–
+
+    // å­—å…¸æ–‡ä»¶
+    .loadDict('dict.txt')           // ç›˜å¤è¯å…¸
+    .loadDict('dict2.txt')          // æ‰©å±•è¯å…¸ï¼ˆç”¨äºŽè°ƒæ•´åŽŸç›˜å¤è¯å…¸ï¼‰
+    .loadDict('dict3.txt')          // æ‰©å±•è¯å…¸ï¼ˆç”¨äºŽè°ƒæ•´åŽŸç›˜å¤è¯å…¸ï¼‰
+    .loadDict('names.txt')          // å¸¸è§åè¯ã€äººå
+    .loadDict('wildcard.txt', 'WILDCARD', true)   // é€šé…ç¬¦
+    .loadSynonymDict('synonym.txt')   // åŒä¹‰è¯
+    .loadStopwordDict('stopword.txt') // åœæ­¢ç¬¦
+  ;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```javascript
+// è½½å…¥æ¨¡å—
+var Segment = require('segment');
+// åˆ›å»ºå®žä¾‹
+var segment = new Segment();
+// ä½¿ç”¨é»˜è®¤çš„è¯†åˆ«æ¨¡å—åŠå­—å…¸ï¼Œè½½å…¥å­—å…¸æ–‡ä»¶éœ€è¦1ç§’ï¼Œä»…åˆå§‹åŒ–æ—¶æ‰§è¡Œä¸€æ¬¡å³å¯
+segment.<span class="apidocCodeKeywordSpan">useDefault</span>();
+
+// å¼€å§‹åˆ†è¯
+console.log(segment.doSegment('è¿™æ˜¯ä¸€ä¸ªåŸºäºŽNode.jsçš„ä¸­æ–‡åˆ†è¯æ¨¡å—ã€‚'));
+```
+
+è¿”å›žç»“æžœæ&nbsp;¼å¼ï¼š
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.segment.Tokenizer" id="apidoc.module.segment.Tokenizer">module segment.Tokenizer</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Tokenizer.Tokenizer" id="apidoc.element.segment.Tokenizer.Tokenizer">
+        function <span class="apidocSignatureSpan">segment.</span>Tokenizer
+        <span class="apidocSignatureSpan">(segment)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Tokenizer = function (segment) {
+  this.segment = segment;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.segment.Tokenizer.prototype" id="apidoc.module.segment.Tokenizer.prototype">module segment.Tokenizer.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.segment.Tokenizer.prototype.split" id="apidoc.element.segment.Tokenizer.prototype.split">
+        function <span class="apidocSignatureSpan">segment.Tokenizer.prototype.</span>split
+        <span class="apidocSignatureSpan">(text, modules)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">split = function (text, modules) {
+  if (modules.length &lt; 1) {
+    throw Error('No tokenizer module!');
+  } else {
+    // æŒ‰é¡ºåºåˆ†åˆ«è°ƒç”¨å„ä¸ªmoduleæ¥è¿›è¡Œåˆ†è¯ ï¼š å„ä¸ªmoduleä»…å¯¹æ²¡æœ‰è¯†åˆ«ç±»åž‹çš„å•è¯è¿›è¡Œåˆ†è¯
+    var ret = [{w: text}];
+    modules.forEach(function (module) {
+      ret = module.split(ret);
+    });
+    return ret;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  ret[i].ps = POSTAG.chsName(ret[i].p);
+}
+console.log(ret);
+console.log(line);
+console.log('spent ' + ((e - s) / NUM) + 'ms');
+return;
+console.log(segment.toString(ret));
+var split = segment.<span class="apidocCodeKeywordSpan">split</span>(ret, 'æ˜¯');
+for (var i in split)
+  console.log(segment.toString(split[i]));
+console.log(segment.indexOf(ret, 'çš„', 3));
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.segment.toString" id="apidoc.module.segment.toString">module segment.toString</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.segment.toString.toString" id="apidoc.element.segment.toString.toString">
+        function <span class="apidocSignatureSpan">segment.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  line += ret[i].w + '/';
+  ret[i].ps = POSTAG.chsName(ret[i].p);
+}
+console.log(ret);
+console.log(line);
+console.log('spent ' + ((e - s) / NUM) + 'ms');
+return;
+console.log(segment.<span class="apidocCodeKeywordSpan">toString</span>(ret));
+var split = segment.split(ret, 'æ˜¯');
+for (var i in split)
+  console.log(segment.toString(split[i]));
+console.log(segment.indexOf(ret, 'çš„', 3));
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>

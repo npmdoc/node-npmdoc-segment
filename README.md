@@ -1,6 +1,6 @@
 # npmdoc-segment
 
-#### api documentation for  [segment (v0.1.3)](https://github.com/leizongmin/node-segment#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-segment.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-segment) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-segment.svg)](https://travis-ci.org/npmdoc/node-npmdoc-segment)
+#### basic api documentation for  [segment (v0.1.3)](https://github.com/leizongmin/node-segment#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-segment.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-segment) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-segment.svg)](https://travis-ci.org/npmdoc/node-npmdoc-segment)
 
 #### Chinese word segmentation 中文分词模块
 
@@ -69,7 +69,8 @@
     "scripts": {
         "test": "mocha -t 5000"
     },
-    "version": "0.1.3"
+    "version": "0.1.3",
+    "bin": {}
 }
 ```
 
